@@ -25,17 +25,21 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+      
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
         shell: bash
 
       - name: Print Environment Info
-        run: npx nx report
+        run: pnpx nx report
         shell: bash
 
       - name: Publish packages
-        run: npx nx release publish
+        run: pnpx nx release publish
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

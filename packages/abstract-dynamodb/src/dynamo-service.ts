@@ -5,10 +5,6 @@ import {
 } from '@aws-sdk/client-dynamodb';
 import { marshall } from '@aws-sdk/util-dynamodb';
 
-import { getClient } from './utils/get-client';
-import { getQueryExpressions } from './utils/get-query-expressions';
-import { getUpdateExpression } from './utils/get-update-expression';
-import { DynamoErrorNotFound, DynamoErrorUnknown } from './utils/dynamo-error';
 import { DEFAULT_LIMIT } from './constants';
 import {
   type IListArgs,
@@ -16,6 +12,10 @@ import {
   type IListResult,
   type IDynamoModel
 } from './types';
+import { getClient } from './utils/get-client';
+import { getQueryExpressions } from './utils/get-query-expressions';
+import { getUpdateExpression } from './utils/get-update-expression';
+import { DynamoErrorNotFound, DynamoErrorUnknown } from './utils/dynamo-error';
 
 export abstract class DynamoService<
   T extends IDynamoModel,
