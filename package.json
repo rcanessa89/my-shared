@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "commit": "git-cz",
-    "prepare": "husky"
+    "prepare": "husky",
+    "format": "npx nx format:write",
+    "check": "npx nx run-many --target=lint,test,build --all --skip-nx-cache"
   },
   "private": true,
   "devDependencies": {
@@ -37,9 +39,6 @@
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.13.0",
     "verdaccio": "^5.0.4"
-  },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
   },
   "dependencies": {},
   "nx": {

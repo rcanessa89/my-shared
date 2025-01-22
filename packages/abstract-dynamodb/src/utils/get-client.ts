@@ -2,7 +2,7 @@ import { DynamoDB, type DynamoDBClientConfig } from '@aws-sdk/client-dynamodb';
 
 let dynamodbClient: DynamoDB | null = null;
 
-export const getClient = (config: DynamoDBClientConfig) => {
+export const getClient = (config: DynamoDBClientConfig = {}) => {
   if (dynamodbClient) {
     return dynamodbClient;
   }

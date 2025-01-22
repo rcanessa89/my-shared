@@ -1,4 +1,8 @@
-import { DynamoDB, type AttributeValue } from '@aws-sdk/client-dynamodb';
+import {
+  DynamoDB,
+  type DynamoDBClientConfig,
+  type AttributeValue
+} from '@aws-sdk/client-dynamodb';
 import { marshall } from '@aws-sdk/util-dynamodb';
 
 import { getClient } from './utils/get-client';
@@ -23,12 +27,12 @@ export abstract class DynamoService<
 
   constructor({
     tableName,
-    clientOptions = []
+    clientConfig = {}
   }: {
     tableName: string;
-    clientOptions?: Parameters<typeof getClient>;
+    clientConfig?: DynamoDBClientConfig;
   }) {
-    this.client = getClient(clientOptions);
+    this.client = getClient(clientConfig);
     this.tableName = tableName;
   }
 
