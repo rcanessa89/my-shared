@@ -1,3 +1,13 @@
+## 0.1.2 (2025-01-22)
+
+### 🩹 Fixes
+
+- **abstract-dynamo:** fixing index file ([9b1a32e](https://github.com/rcanessa89/my-shared/commit/9b1a32e))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.1 (2025-01-22)
 
 ### 🩹 Fixes
