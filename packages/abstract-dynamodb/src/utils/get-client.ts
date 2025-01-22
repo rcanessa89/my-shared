@@ -1,15 +1,13 @@
-import { DynamoDB } from '@aws-sdk/client-dynamodb';
+import { DynamoDB, type DynamoDBClientConfig } from '@aws-sdk/client-dynamodb';
 
 let dynamodbClient: DynamoDB | null = null;
 
-export const getClient = (
-  ...params: ConstructorParameters<typeof DynamoDB>
-) => {
+export const getClient = (config: DynamoDBClientConfig) => {
   if (dynamodbClient) {
     return dynamodbClient;
   }
 
-  dynamodbClient = new DynamoDB(...params);
+  dynamodbClient = new DynamoDB(config);
 
   return dynamodbClient;
 };
