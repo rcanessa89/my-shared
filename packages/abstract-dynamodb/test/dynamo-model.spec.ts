@@ -1,6 +1,6 @@
 import { DynamoModel } from '../src/dynamo-model';
 
-describe('DynamoModel', () => {
+describe('dynamo-model - DynamoModel', () => {
   it('Should has all properties', () => {
     const data = {
       id: 'id',
