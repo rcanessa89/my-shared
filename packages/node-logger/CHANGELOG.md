@@ -1,3 +1,13 @@
+## 0.2.2 (2025-01-23)
+
+### 🩹 Fixes
+
+- **fix:** general fixes ([c13dda8](https://github.com/rcanessa89/my-shared/commit/c13dda8))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.1 (2025-01-23)
 
 ### 🩹 Fixes
