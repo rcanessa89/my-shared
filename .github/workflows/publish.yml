@@ -34,6 +34,10 @@ jobs:
         run: pnpm install --frozen-lockfile
         shell: bash
 
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: pnpm exec nx affected -t lint test build
+
       - name: Print Environment Info
         run: pnpx nx report
         shell: bash
