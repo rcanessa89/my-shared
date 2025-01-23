@@ -9,8 +9,8 @@ const formatters: LoggerOptions['formatters'] = {
   level: (label: string) => ({ level: label.toUpperCase() })
 };
 
-export const getLogger = (opt: Partial<LoggerOptions> = {}) =>
-  pino({
+export const getLogger = (opt: Partial<LoggerOptions> = {}) => {
+  return pino({
     name: opt.name || process.env['LOGGER_NAME'] || 'app',
     level: opt.level || process.env['LOGGER_LEVEL'] || 'trace',
     messageKey: 'message',
@@ -21,3 +21,4 @@ export const getLogger = (opt: Partial<LoggerOptions> = {}) =>
       ...(opt.formatters || {})
     }
   });
+};
