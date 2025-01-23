@@ -4,6 +4,9 @@
   "include": [],
   "references": [
     {
+      "path": "../node-logger"
+    },
+    {
       "path": "./tsconfig.lib.json"
     },
     {
