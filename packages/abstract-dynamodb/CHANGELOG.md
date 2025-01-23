@@ -1,3 +1,13 @@
+## 0.1.4 (2025-01-23)
+
+### 🩹 Fixes
+
+- **limit:** list limit arg default value to 25 ([d70b728](https://github.com/rcanessa89/my-shared/commit/d70b728))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.3 (2025-01-23)
 
 ### 🩹 Fixes
