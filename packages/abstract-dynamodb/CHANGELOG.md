@@ -1,3 +1,13 @@
+## 0.1.3 (2025-01-23)
+
+### 🩹 Fixes
+
+- **limit:** fixing list limit to 20 ([5a1a767](https://github.com/rcanessa89/my-shared/commit/5a1a767))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.2 (2025-01-22)
 
 ### 🩹 Fixes
