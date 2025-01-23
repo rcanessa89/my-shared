@@ -1,3 +1,13 @@
+## 0.1.5 (2025-01-23)
+
+### 🩹 Fixes
+
+- **dep:** fixing dependency ([04f1339](https://github.com/rcanessa89/my-shared/commit/04f1339))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.4 (2025-01-23)
 
 ### 🩹 Fixes
