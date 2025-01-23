@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./packages/abstract-dynamodb"
+    },
+    {
+      "path": "./packages/node-logger"
     }
   ]
 }
