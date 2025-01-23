@@ -1,3 +1,13 @@
+## 0.2.0 (2025-01-23)
+
+### 🚀 Features
+
+- **logger:** export node-logger function from api-gateway-logger ([d0c64df](https://github.com/rcanessa89/my-shared/commit/d0c64df))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.5 (2025-01-23)
 
 ### 🩹 Fixes
