@@ -1,4 +1,4 @@
-import pino, { type LoggerOptions } from 'pino';
+import pino, { type LoggerOptions, type Logger } from 'pino';
 
 const formatters: LoggerOptions['formatters'] = {
   bindings: (bindings) => {
@@ -9,7 +9,7 @@ const formatters: LoggerOptions['formatters'] = {
   level: (label: string) => ({ level: label.toUpperCase() })
 };
 
-export const getLogger = (opt: Partial<LoggerOptions> = {}) =>
+export const getLogger = (opt: Partial<LoggerOptions> = {}): Logger =>
   pino({
     name: opt.name || process.env['LOGGER_NAME'] || 'node-app',
     level: opt.level || process.env['LOGGER_LEVEL'] || 'trace',
