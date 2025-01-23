@@ -43,7 +43,9 @@ jobs:
         shell: bash
 
       - name: Publish packages
-        run: pnpx nx release publish --access=public
+        run: |
+          PACKAGE_NAME=$(echo ${{ github.ref_name }} | sed -E 's/release\/(.*)\/[0-9]+\.[0-9]+\.[0-9]+/\1/')
+          pnpx nx release publish --access=public --projects=$PACKAGE_NAME
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
