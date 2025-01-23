@@ -1,3 +1,13 @@
+## 0.2.1 (2025-01-23)
+
+### 🩹 Fixes
+
+- **fix:** fixing string ([47c0703](https://github.com/rcanessa89/my-shared/commit/47c0703))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.0 (2025-01-23)
 
 ### 🚀 Features
