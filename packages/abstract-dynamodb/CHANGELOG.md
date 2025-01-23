@@ -1,3 +1,13 @@
+## 0.1.9 (2025-01-23)
+
+### 🩹 Fixes
+
+- **fix:** fixing minor ([e0f34a3](https://github.com/rcanessa89/my-shared/commit/e0f34a3))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.8 (2025-01-23)
 
 ### 🩹 Fixes
