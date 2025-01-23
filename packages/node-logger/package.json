@@ -9,6 +9,10 @@
     "dist",
     "!**/*.tsbuildinfo"
   ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
   "dependencies": {
     "pino": "^9.6.0",
     "tslib": "^2.3.0"

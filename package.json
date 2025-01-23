@@ -40,7 +40,6 @@
     "typescript-eslint": "^8.13.0",
     "verdaccio": "^5.0.4"
   },
-  "dependencies": {},
   "nx": {
     "includedScripts": [],
     "targets": {
