@@ -11,6 +11,9 @@
     },
     {
       "path": "./packages/api-gateway-logger"
+    },
+    {
+      "path": "./packages/cognito"
     }
   ]
 }
