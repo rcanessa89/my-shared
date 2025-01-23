@@ -1,3 +1,13 @@
+## 0.1.1 (2025-01-23)
+
+### 🩹 Fixes
+
+- **minor:** mino changes ([a152db6](https://github.com/rcanessa89/my-shared/commit/a152db6))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.0 (2025-01-23)
 
 ### 🚀 Features

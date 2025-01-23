@@ -1,3 +1,18 @@
+## 0.3.0 (2025-01-23)
+
+### 🚀 Features
+
+- **new package:** adding new package api gateway logger ([5314eda](https://github.com/rcanessa89/my-shared/commit/5314eda))
+
+### 🩹 Fixes
+
+- **minor:** mino changes ([a152db6](https://github.com/rcanessa89/my-shared/commit/a152db6))
+- **type:** fixing return type ([0f6fe04](https://github.com/rcanessa89/my-shared/commit/0f6fe04))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.3 (2025-01-23)
 
 ### 🩹 Fixes
