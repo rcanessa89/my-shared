@@ -1,3 +1,13 @@
+## 0.1.7 (2025-01-23)
+
+### 🩹 Fixes
+
+- **fix:** minor fixes ([7583beb](https://github.com/rcanessa89/my-shared/commit/7583beb))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.6 (2025-01-23)
 
 ### 🩹 Fixes
