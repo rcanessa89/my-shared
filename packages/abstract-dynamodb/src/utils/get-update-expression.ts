@@ -3,22 +3,22 @@ import { convertToAttr } from '@aws-sdk/util-dynamodb';
 
 export const getUpdateExpression = (data: Record<string, unknown>) => {
   const initValue = {
-    UpdateExpression: 'set',
-    ExpressionAttributeNames: {} as Record<string, string>,
-    ExpressionAttributeValues: {} as Record<string, AttributeValue>
+    updateExpression: 'set',
+    expressionAttributeNames: {} as Record<string, string>,
+    expressionAttributeValues: {} as Record<string, AttributeValue>
   };
   const result = Object.entries(data).reduce((acc, [attr, val]) => {
     const attrName = `#${attr}`;
     const attrValue = `:${attr}`;
 
-    acc.UpdateExpression = `${acc.UpdateExpression} ${attrName} = ${attrValue},`;
-    acc.ExpressionAttributeNames[attrName] = attr;
-    acc.ExpressionAttributeValues[attrValue] = convertToAttr(val);
+    acc.updateExpression = `${acc.updateExpression} ${attrName} = ${attrValue},`;
+    acc.expressionAttributeNames[attrName] = attr;
+    acc.expressionAttributeValues[attrValue] = convertToAttr(val);
 
     return acc;
   }, initValue);
 
-  result.UpdateExpression = result.UpdateExpression.slice(0, -1);
+  result.updateExpression = result.updateExpression.slice(0, -1);
 
   return result;
 };

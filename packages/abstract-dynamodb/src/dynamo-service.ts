@@ -3,51 +3,57 @@ import {
   type DynamoDBClientConfig,
   type AttributeValue
 } from '@aws-sdk/client-dynamodb';
-import { marshall } from '@aws-sdk/util-dynamodb';
+import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 
 import { DEFAULT_LIMIT } from './constants';
 import {
   type IListArgs,
   type IDynamoService,
   type IListResult,
-  type IDynamoModel
+  type IModelDTO,
+  type IItemHandler,
+  type IItem
 } from './types';
 import { getClient } from './utils/get-client';
 import { getQueryExpressions } from './utils/get-query-expressions';
 import { getUpdateExpression } from './utils/get-update-expression';
 import { DynamoErrorNotFound, DynamoErrorUnknown } from './utils/dynamo-error';
 
-export abstract class DynamoService<
-  T extends IDynamoModel,
-  FindOneArgs extends Partial<T>
-> implements IDynamoService<T, IListArgs, IListResult<T>>
+export abstract class DynamoService<T, FindOneArgs, Dto = T & IModelDTO>
+  implements IDynamoService<T, FindOneArgs, Dto>, IItemHandler<T, Dto>
 {
+  protected readonly marshall = marshall;
+  protected readonly unmarshall = unmarshall;
+  protected readonly type: string;
   private readonly client: DynamoDB;
   private readonly tableName: string;
+  private readonly fromItemRemove: (keyof IItem<T>)[];
 
   constructor({
     tableName,
-    clientConfig = {}
+    clientConfig = {},
+    fromItemRemove = ['PK', 'SK', 'type'],
+    type
   }: {
     tableName: string;
     clientConfig?: DynamoDBClientConfig;
+    fromItemRemove?: (keyof IItem<T>)[];
+    type: string;
   }) {
     this.client = getClient(clientConfig);
     this.tableName = tableName;
+    this.fromItemRemove = fromItemRemove;
+    this.type = type;
   }
 
-  protected abstract pk(m: FindOneArgs): string;
-  protected abstract sk(m: FindOneArgs): string;
-  protected abstract toItem(m: T): Record<string, AttributeValue>;
-  protected abstract fromItem(
-    item: Record<string, AttributeValue> | undefined
-  ): T;
+  protected abstract pk(m: unknown): string;
+  protected abstract sk?(m: unknown): string;
 
   public async list({
     limit = DEFAULT_LIMIT,
     nextToken,
     ...keyConditions
-  }: IListArgs): Promise<IListResult<T>> {
+  }: IListArgs): Promise<IListResult<Dto>> {
     const {
       expressionAttributeNames,
       expressionAttributeValues,
@@ -95,21 +101,26 @@ export abstract class DynamoService<
     }
   }
 
-  public async create(m: T) {
+  public async create(m: Omit<T, 'createdAt' | 'updatedAt'>): Promise<Dto> {
     try {
+      const time = {
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+
       await this.client.putItem({
         TableName: this.tableName,
         Item: {
           ...this.toItem(m),
-          ...marshall({
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString()
-          })
+          ...this.marshall(time)
         },
         ConditionExpression: 'attribute_not_exists(SK)'
       });
 
-      return m;
+      return {
+        ...m,
+        ...time
+      } as Dto;
     } catch (error: unknown) {
       throw this.handleError(error);
     }
@@ -117,13 +128,21 @@ export abstract class DynamoService<
 
   public async update(m: FindOneArgs & Partial<T>) {
     try {
+      const {
+        updateExpression,
+        expressionAttributeNames,
+        expressionAttributeValues
+      } = getUpdateExpression({
+        ...m,
+        updatedAt: new Date().toISOString()
+      });
+
       await this.client.updateItem({
         TableName: this.tableName,
         Key: this.keys(m),
-        ...getUpdateExpression({
-          ...m,
-          updatedAt: new Date().toISOString()
-        } as Record<string, unknown>)
+        UpdateExpression: updateExpression,
+        ExpressionAttributeNames: expressionAttributeNames,
+        ExpressionAttributeValues: expressionAttributeValues
       });
 
       return this.findOne(m);
@@ -146,11 +165,35 @@ export abstract class DynamoService<
     }
   }
 
-  protected keys(m: FindOneArgs): Record<string, AttributeValue> {
+  protected keys(m: unknown): {
+    PK: AttributeValue.SMember;
+    SK?: AttributeValue.SMember;
+  } {
     return {
       PK: { S: this.pk(m) },
-      SK: { S: this.sk(m) }
+      ...(this.sk ? { SK: { S: this.sk(m) } } : {})
     };
+  }
+
+  public toItem(
+    m: Omit<T, 'createdAt' | 'updatedAt'>
+  ): Record<string, AttributeValue> {
+    return this.marshall({
+      PK: this.pk(m),
+      ...(this.sk ? { SK: this.sk(m) } : {}),
+      type: this.type,
+      ...m
+    });
+  }
+
+  public fromItem(item: Record<string, AttributeValue>): Dto {
+    const data = this.unmarshall(item);
+
+    return Object.fromEntries(
+      Object.entries(data).filter(
+        ([key]) => !this.fromItemRemove.includes(key as keyof IItem<T>)
+      )
+    ) as Dto;
   }
 
   private handleError(error: unknown) {

@@ -1,4 +1,5 @@
 import { type AttributeValue } from '@aws-sdk/client-dynamodb';
+
 import { type IKeyConditionExpressions } from '../types';
 
 const getConditionExp = (expression?: string) => {
@@ -87,7 +88,6 @@ export const getQueryExpressions = ({
       expressionAttributeValues[`:${key}`] = {
         S: value
       };
-      keyConditionExpressionArr.push(getConditionExp(key));
     } else if (value?.from && value?.to) {
       expressionAttributeValues[':from'] = {
         S: value?.from
@@ -95,8 +95,9 @@ export const getQueryExpressions = ({
       expressionAttributeValues[':to'] = {
         S: value.to
       };
-      keyConditionExpressionArr.push(getConditionExp());
     }
+
+    keyConditionExpressionArr.push(getConditionExp(key));
   });
 
   const keyConditionExpression = keyConditionExpressionArr.join(' AND ');
