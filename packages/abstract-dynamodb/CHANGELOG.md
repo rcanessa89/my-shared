@@ -1,3 +1,13 @@
+## 0.1.5 (2025-01-23)
+
+### 🩹 Fixes
+
+- **limit:** moving list arg to default value to 20 ([6e1a020](https://github.com/rcanessa89/my-shared/commit/6e1a020))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.4 (2025-01-23)
 
 ### 🩹 Fixes
