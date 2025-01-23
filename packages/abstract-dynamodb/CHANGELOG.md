@@ -1,3 +1,13 @@
+## 0.1.11 (2025-01-23)
+
+### 🩹 Fixes
+
+- **minor:** minor fixes ([8d86cd5](https://github.com/rcanessa89/my-shared/commit/8d86cd5))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.10 (2025-01-23)
 
 ### 🩹 Fixes
