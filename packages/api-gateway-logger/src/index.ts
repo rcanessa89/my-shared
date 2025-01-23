@@ -1,6 +1,8 @@
 import { type APIGatewayProxyEventV2, type Context } from 'aws-lambda';
 import { getLogger } from '@rcanessa/node-logger';
 
+export { getLogger } from '@rcanessa/node-logger';
+
 export const apiGatewayLogger = (
   name: string,
   event: APIGatewayProxyEventV2,
