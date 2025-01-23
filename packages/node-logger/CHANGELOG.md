@@ -1,3 +1,13 @@
+## 0.3.2 (2025-01-23)
+
+### 🩹 Fixes
+
+- **fix:** minor ([ff58f2a](https://github.com/rcanessa89/my-shared/commit/ff58f2a))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.3.1 (2025-01-23)
 
 ### 🩹 Fixes
