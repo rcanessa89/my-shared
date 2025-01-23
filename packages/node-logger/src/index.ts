@@ -9,9 +9,9 @@ const formatters: LoggerOptions['formatters'] = {
   level: (label: string) => ({ level: label.toUpperCase() })
 };
 
-export const getLogger = (opt: Partial<LoggerOptions> = {}) => {
-  return pino({
-    name: opt.name || process.env['LOGGER_NAME'] || 'app',
+export const getLogger = (opt: Partial<LoggerOptions> = {}) =>
+  pino({
+    name: opt.name || process.env['LOGGER_NAME'] || 'node-app',
     level: opt.level || process.env['LOGGER_LEVEL'] || 'trace',
     messageKey: 'message',
     timestamp: () => `,"timestamp":"${new Date(Date.now()).toISOString()}"`,
@@ -21,4 +21,3 @@ export const getLogger = (opt: Partial<LoggerOptions> = {}) => {
       ...(opt.formatters || {})
     }
   });
-};
