@@ -5,7 +5,7 @@ export const apiGatewayLogger = (
   name: string,
   event: APIGatewayProxyEventV2,
   context: Context
-): ReturnType<typeof getLogger> => {
+) => {
   const {
     version,
     headers,

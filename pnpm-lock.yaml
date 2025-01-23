@@ -111,8 +111,8 @@ importers:
   packages/api-gateway-logger:
     dependencies:
       '@rcanessa/node-logger':
-        specifier: ^0.2.3
-        version: 0.2.3
+        specifier: ^0.3.3
+        version: 0.3.3
       aws-lambda:
         specifier: ^1.0.7
         version: 1.0.7
@@ -1216,8 +1216,8 @@ packages:
     peerDependencies:
       typescript: ^3 || ^4 || ^5
 
-  '@rcanessa/node-logger@0.2.3':
-    resolution: {integrity: sha512-4JgNQ7gWgzXUtuOC6xwSS2xFhdsxJIQodAyUaYsJxdgl9imQwOTbEluu+jNMWtRU6wS0TSZZtWE1MEeOazPoVA==}
+  '@rcanessa/node-logger@0.3.3':
+    resolution: {integrity: sha512-ua3lyaqQzcJnai/RNxKkagH9OjnbgzWT7cbuvzF0AilcysAre8Jtzi4cm8DGyI0RBonOCSuuplwD6vuUfHCF/A==}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -6386,7 +6386,7 @@ snapshots:
       esquery: 1.6.0
       typescript: 5.6.3
 
-  '@rcanessa/node-logger@0.2.3':
+  '@rcanessa/node-logger@0.3.3':
     dependencies:
       pino: 9.6.0
       tslib: 2.8.1
