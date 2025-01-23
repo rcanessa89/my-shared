@@ -20,7 +20,7 @@ describe('getLogger', () => {
     getLogger();
 
     const callArgs = mockPino.mock.calls[0][0];
-    expect(callArgs.name).toBe('node-app');
+    expect(callArgs.name).toBe('app');
     expect(callArgs.level).toBe('trace');
     expect(callArgs.messageKey).toBe('message');
     expect(typeof callArgs.timestamp).toBe('function');

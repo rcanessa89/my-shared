@@ -11,7 +11,7 @@ const formatters: LoggerOptions['formatters'] = {
 
 export const getLogger = (opt: Partial<LoggerOptions> = {}): Logger =>
   pino({
-    name: opt.name || process.env['LOGGER_NAME'] || 'node-app',
+    name: opt.name || process.env['LOGGER_NAME'] || 'app',
     level: opt.level || process.env['LOGGER_LEVEL'] || 'trace',
     messageKey: 'message',
     timestamp: () => `,"timestamp":"${new Date(Date.now()).toISOString()}"`,

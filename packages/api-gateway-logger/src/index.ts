@@ -36,6 +36,10 @@ export const apiGatewayLogger = (
         }
       })
     },
-    redact: ['event.headers.Authorization', 'event.headers.authorization']
+    redact: [
+      'event.headers.Authorization',
+      'event.headers.authorization',
+      'event.headers.Auth'
+    ]
   });
 };
