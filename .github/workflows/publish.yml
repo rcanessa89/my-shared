@@ -3,7 +3,6 @@ name: Publish
 on:
   push:
     tags:
-      - v*.*.*
       - 'release/*/[0-9]*.[0-9]*.[0-9]*'
 
 jobs:
@@ -34,9 +33,11 @@ jobs:
         run: pnpm install --frozen-lockfile
         shell: bash
 
-      - uses: nrwl/nx-set-shas@v4
-
-      - run: pnpm exec nx affected -t lint test build
+      - name: Run Nx base
+        run: |
+          PACKAGE_NAME=$(echo ${{ github.ref_name }} | sed -E 's/release\/(.*)\/[0-9]+\.[0-9]+\.[0-9]+/\1/')
+          nx run-many -t build test lint --projects=$PACKAGE_NAME --skip-cache
+        shell: bash
 
       - name: Print Environment Info
         run: pnpx nx report
