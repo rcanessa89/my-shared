@@ -6,7 +6,8 @@
     "commit": "git-cz",
     "prepare": "husky",
     "format": "npx nx format:write",
-    "check": "npx nx run-many --target=lint,test,build --all --skip-nx-cache"
+    "check": "npx nx run-many --target=lint,test,build --all --skip-nx-cache",
+    "release": "npx nx release --skip-publish"
   },
   "private": true,
   "devDependencies": {

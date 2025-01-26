@@ -3,8 +3,9 @@ import {
   generateFiles,
   Tree,
   addDependenciesToPackageJson,
-  workspaceRoot,
-  OverwriteStrategy
+  OverwriteStrategy,
+  installPackagesTask,
+  updateJson
 } from '@nx/devkit';
 import * as path from 'path';
 
@@ -21,11 +22,24 @@ export async function setupWsGenerator(
       'husky': '^9.1.7'
     }
   );
+  await updateJson(tree, 'package.json', (json) => {
+    json.scripts = {
+      ...json.scripts,
+      'commit': 'git-cz',
+      'prepare': 'husky',
+      'format': 'npx nx format:write',
+      'check': 'npx nx run-many --target=lint,test,build --all --skip-nx-cache'
+    };
+
+    return json;
+   });
+
+  installPackagesTask(tree);
 
   generateFiles(
     tree,
     path.join(__dirname, 'files'),
-    workspaceRoot,
+    '/',
     {
       overwriteStrategy: OverwriteStrategy 
     }

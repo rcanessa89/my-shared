@@ -1,36 +1,48 @@
-import path from 'path';
-import { Tree, readJson, workspaceRoot } from '@nx/devkit';
+import { Tree, readJson, installPackagesTask } from '@nx/devkit';
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 import setupWsGenerator from './setup-ws';
 
+jest.mock('@nx/devkit', () => ({
+  ...jest.requireActual('@nx/devkit'),
+  installPackagesTask: jest.fn()
+}));
+
 describe('setup-ws generator', () => {
- let tree: Tree;
+  let tree: Tree;
 
- beforeEach(() => {
-   tree = createTreeWithEmptyWorkspace();
- });
+  beforeEach(() => {
+    tree = createTreeWithEmptyWorkspace();
+  });
 
- it('should add dev dependencies to package.json', async () => {
-   await setupWsGenerator(tree);
-   
-   const packageJson = readJson(tree, 'package.json');
-   expect(packageJson.devDependencies).toEqual({
-     'lint-staged': '^15.4.1',
-     '@commitlint/cli': '^19.6.1',
-     '@commitlint/config-conventional': '^19.6.0',
-     'husky': '^9.1.7'
-   });
- });
+  it('should add dev dependencies to package.json', async () => {
+    await setupWsGenerator(tree);
 
- it('should generate files from template', async () => {
-   await setupWsGenerator(tree);
+    const packageJson = readJson(tree, 'package.json');
 
-   expect(tree.exists(path.join(workspaceRoot, '.husky/commit-msg'))).toBeTruthy();
-   expect(tree.exists(path.join(workspaceRoot, '.husky/pre-commit'))).toBeTruthy();
-   expect(tree.exists(path.join(workspaceRoot, '.czrc'))).toBeTruthy();
-   expect(tree.exists(path.join(workspaceRoot, '.nvmrc'))).toBeTruthy();
-   expect(tree.exists(path.join(workspaceRoot, 'commitlint.config.js'))).toBeTruthy();
-   expect(tree.exists(path.join(workspaceRoot, 'lint-staged.config.js'))).toBeTruthy();
-   expect(tree.exists(path.join(workspaceRoot, 'wait-for-it'))).toBeTruthy();
- });
+    expect(packageJson.devDependencies).toEqual({
+      'lint-staged': '^15.4.1',
+      '@commitlint/cli': '^19.6.1',
+      '@commitlint/config-conventional': '^19.6.0',
+      husky: '^9.1.7'
+    });
+    expect(packageJson.scripts).toEqual({
+      commit: 'git-cz',
+      prepare: 'husky',
+      format: 'npx nx format:write',
+      check: 'npx nx run-many --target=lint,test,build --all --skip-nx-cache'
+    });
+    expect(installPackagesTask).toHaveBeenCalledWith(tree);
+  });
+
+  it('should generate files from template', async () => {
+    await setupWsGenerator(tree);
+
+    expect(tree.exists('.husky/commit-msg')).toBeTruthy();
+    expect(tree.exists('.husky/pre-commit')).toBeTruthy();
+    expect(tree.exists('.czrc')).toBeTruthy();
+    expect(tree.exists('.nvmrc')).toBeTruthy();
+    expect(tree.exists('commitlint.config.js')).toBeTruthy();
+    expect(tree.exists('lint-staged.config.js')).toBeTruthy();
+    expect(tree.exists('wait-for-it')).toBeTruthy();
+  });
 });
