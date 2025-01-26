@@ -1,3 +1,13 @@
+## 0.1.1 (2025-01-26)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing setup-ws paths ([6464479](https://github.com/rcanessa89/my-shared/commit/6464479))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.0 (2025-01-26)
 
 ### 🚀 Features
