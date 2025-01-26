@@ -1,3 +1,13 @@
+## 0.1.2 (2025-01-26)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing destination setup-ws generator ([4426021](https://github.com/rcanessa89/my-shared/commit/4426021))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.1 (2025-01-26)
 
 ### 🩹 Fixes
