@@ -1,9 +1,9 @@
 {
   "generators": {
     "setup-ws": {
-      "factory": "./dist/generators/setup-ws",
-      "schema": "./dist/generators/schema.json",
-      "description": "setup-ws generator"
+      "factory": "./dist/generators/setup-ws/setup-ws",
+      "schema": "./dist/generators/setup-ws/schema.json",
+      "description": "Setup the workspace initial files"
     }
   }
 }
