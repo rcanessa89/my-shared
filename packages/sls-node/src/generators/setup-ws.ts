@@ -2,14 +2,14 @@ import {
   formatFiles,
   generateFiles,
   Tree,
-  addDependenciesToPackageJson
+  addDependenciesToPackageJson,
+  workspaceRoot,
+  OverwriteStrategy
 } from '@nx/devkit';
 import * as path from 'path';
-import { SetupWsGeneratorSchema } from './schema';
 
 export async function setupWsGenerator(
-  tree: Tree,
-  options: SetupWsGeneratorSchema
+  tree: Tree
 ) {
   await addDependenciesToPackageJson(
     tree,
@@ -22,9 +22,14 @@ export async function setupWsGenerator(
     }
   );
 
-  const projectRoot = `./`;
-
-  generateFiles(tree, path.join(__dirname, 'files'), projectRoot, options);
+  generateFiles(
+    tree,
+    path.join(__dirname, 'files'),
+    workspaceRoot,
+    {
+      overwriteStrategy: OverwriteStrategy 
+    }
+  );
 
   await formatFiles(tree);
 }
