@@ -1,10 +1,13 @@
-import { Tree, readJson, installPackagesTask } from '@nx/devkit';
+import { Tree, readJson, installPackagesTask, detectPackageManager } from '@nx/devkit';
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 import setupWsGenerator from './setup-ws';
 
+const pm = 'pnpm';
+
 jest.mock('@nx/devkit', () => ({
   ...jest.requireActual('@nx/devkit'),
-  installPackagesTask: jest.fn()
+  installPackagesTask: jest.fn(),
+  detectPackageManager: jest.fn(() => pm)
 }));
 
 describe('setup-ws generator', () => {
@@ -31,7 +34,8 @@ describe('setup-ws generator', () => {
       format: 'npx nx format:write',
       check: 'npx nx run-many --target=lint,test,build --all --skip-nx-cache'
     });
-    expect(installPackagesTask).toHaveBeenCalledWith(tree);
+    expect(detectPackageManager).toHaveBeenCalled();
+    expect(installPackagesTask).toHaveBeenCalledWith(tree, true, '/', pm);
   });
 
   it('should generate files from template', async () => {

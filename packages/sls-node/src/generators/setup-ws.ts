@@ -5,7 +5,8 @@ import {
   addDependenciesToPackageJson,
   OverwriteStrategy,
   installPackagesTask,
-  updateJson
+  updateJson,
+  detectPackageManager
 } from '@nx/devkit';
 import * as path from 'path';
 
@@ -34,12 +35,15 @@ export async function setupWsGenerator(
     return json;
    });
 
-  installPackagesTask(tree);
+   const projectRoot = '/';
+   const pm = detectPackageManager();
+
+  installPackagesTask(tree, true, projectRoot, pm);
 
   generateFiles(
     tree,
     path.join(__dirname, 'files'),
-    '/',
+    projectRoot,
     {
       overwriteStrategy: OverwriteStrategy 
     }
