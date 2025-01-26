@@ -50,7 +50,7 @@ export async function setupWsGenerator(
 
   const pm = detectPackageManager();
 
-  return () => installPackagesTask(tree, true, projectRoot, pm);
+  return () => installPackagesTask(tree, false, projectRoot, pm);
 }
 
 export default setupWsGenerator;
