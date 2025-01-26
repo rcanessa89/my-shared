@@ -36,9 +36,6 @@ export async function setupWsGenerator(
    });
 
    const projectRoot = '/';
-   const pm = detectPackageManager();
-
-  installPackagesTask(tree, true, projectRoot, pm);
 
   generateFiles(
     tree,
@@ -50,6 +47,10 @@ export async function setupWsGenerator(
   );
 
   await formatFiles(tree);
+
+  const pm = detectPackageManager();
+
+  return () => installPackagesTask(tree, true, projectRoot, pm);
 }
 
 export default setupWsGenerator;
