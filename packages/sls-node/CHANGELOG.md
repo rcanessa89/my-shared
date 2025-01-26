@@ -1,3 +1,13 @@
+## 0.1.3 (2025-01-26)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing setup-ws ([5da7d3e](https://github.com/rcanessa89/my-shared/commit/5da7d3e))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.2 (2025-01-26)
 
 ### 🩹 Fixes
