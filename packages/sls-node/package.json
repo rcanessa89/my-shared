@@ -1,0 +1,61 @@
+{
+  "name": "@rcanessa/sls-node",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rcanessa89/my-shared"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "generators.json"
+  ],
+  "nx": {
+    "sourceRoot": "packages/sls-node/src",
+    "projectType": "library",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "packages/sls-node/dist",
+          "main": "packages/sls-node/src/index.ts",
+          "tsConfig": "packages/sls-node/tsconfig.lib.json",
+          "rootDir": "packages/sls-node/src",
+          "generatePackageJson": false,
+          "assets": [
+            {
+              "input": "./packages/sls-node/src",
+              "glob": "**/!(*.ts)",
+              "output": "."
+            },
+            {
+              "input": "./packages/sls-node/src",
+              "glob": "**/*.d.ts",
+              "output": "."
+            }
+          ]
+        }
+      }
+    },
+    "name": "sls-node"
+  },
+  "dependencies": {
+    "@nx/devkit": "20.3.3",
+    "tslib": "^2.3.0"
+  },
+  "generators": "./generators.json"
+}
