@@ -1,3 +1,13 @@
+## 0.1.4 (2025-01-26)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing setup-ws generator ([c29544b](https://github.com/rcanessa89/my-shared/commit/c29544b))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.3 (2025-01-26)
 
 ### 🩹 Fixes
