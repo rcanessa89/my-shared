@@ -157,6 +157,9 @@ importers:
 
   packages/sls-node:
     dependencies:
+      '@nx/devkit':
+        specifier: 20.3.3
+        version: 20.3.3(nx@20.3.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.6.3))(@swc/core@1.5.29(@swc/helpers@0.5.15)))
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
