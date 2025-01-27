@@ -57,7 +57,8 @@
     },
     "tags": {
       "type": "string",
-      "description": "Add tags to the application (used for linting)."
+      "description": "Add tags to the application (used for linting).",
+      "pattern": "/^[a-zA-Z]+(,[a-zA-Z]+)*$/"
     },
     "swcJest": {
       "type": "boolean",

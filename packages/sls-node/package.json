@@ -57,7 +57,8 @@
     "@nx/devkit": "20.3.3",
     "tslib": "^2.3.0",
     "@nx/node": "20.3.2",
-    "@nx/eslint": "20.3.2"
+    "@nx/eslint": "20.3.2",
+    "yaml": "2.7.0"
   },
   "generators": "./generators.json"
 }

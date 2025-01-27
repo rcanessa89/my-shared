@@ -11,6 +11,13 @@ import * as path from 'path';
 
 import { AppGeneratorSchema } from './schema';
 import { installDeps } from '../../utils/install-deps';
+import { PROYECT_TAG } from '../../constants';
+
+const getTags = (tags?: string) => {
+  const strValue = tags || '';
+
+  return [...strValue.split(','), PROYECT_TAG].join(',');
+};
 
 export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
   const name = options.name || path.basename(options.directory);
@@ -18,6 +25,7 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
   const packageManager = detectPackageManager();
 
   Object.assign(options, { name });
+  Object.assign(options, { tags: getTags(options.tags) });
 
   await applicationGenerator(tree, options);
 

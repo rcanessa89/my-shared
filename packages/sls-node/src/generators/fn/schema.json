@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Fn",
+  "title": "Serverless function",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Function name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the function?",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9-_]*$"
+    },
+    "project": {
+      "type": "string",
+      "description": "Project name",
+      "x-prompt": "Which project would you like to add the function to?",
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["name", "project"]
+}

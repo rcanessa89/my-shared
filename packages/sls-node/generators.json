@@ -9,6 +9,11 @@
       "factory": "./dist/generators/app/app",
       "schema": "./dist/generators/app/schema.json",
       "description": "Setup Serverless framework with Node Js app"
+    },
+    "fn": {
+      "factory": "./dist/generators/fn/fn",
+      "schema": "./dist/generators/fn/schema.json",
+      "description": "fn generator"
     }
   }
 }
