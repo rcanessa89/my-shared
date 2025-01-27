@@ -1,3 +1,17 @@
+## 0.2.0 (2025-01-27)
+
+### 🚀 Features
+
+- **sls-node:** adding app generator ([d69206a](https://github.com/rcanessa89/my-shared/commit/d69206a))
+
+### 🩹 Fixes
+
+- **sls-node:** fixing app generator ([6ad99b6](https://github.com/rcanessa89/my-shared/commit/6ad99b6))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.4 (2025-01-26)
 
 ### 🩹 Fixes
