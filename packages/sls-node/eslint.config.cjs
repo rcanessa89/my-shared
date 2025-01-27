@@ -24,5 +24,11 @@ module.exports = [
     languageOptions: {
       parser: require('jsonc-eslint-parser')
     }
+  },
+  {
+    ignorePatterns: ["generators.json"],
+    rules: {
+      "@nx/nx-plugin-checks": "off"
+    }
   }
 ];
