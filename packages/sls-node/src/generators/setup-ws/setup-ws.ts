@@ -1,18 +1,17 @@
+import * as path from 'path';
 import {
   formatFiles,
   generateFiles,
-  Tree,
   addDependenciesToPackageJson,
-  OverwriteStrategy,
-  installPackagesTask,
   updateJson,
-  detectPackageManager
+  detectPackageManager,
+  OverwriteStrategy,
+  type Tree
 } from '@nx/devkit';
-import * as path from 'path';
 
-export async function setupWsGenerator(
-  tree: Tree
-) {
+import { installDeps } from '../../utils/install-deps';
+
+export async function setupWsGenerator(tree: Tree) {
   await addDependenciesToPackageJson(
     tree,
     {},
@@ -20,37 +19,32 @@ export async function setupWsGenerator(
       'lint-staged': '^15.4.1',
       '@commitlint/cli': '^19.6.1',
       '@commitlint/config-conventional': '^19.6.0',
-      'husky': '^9.1.7'
+      husky: '^9.1.7'
     }
   );
-  await updateJson(tree, 'package.json', (json) => {
+  updateJson(tree, 'package.json', (json) => {
     json.scripts = {
       ...json.scripts,
-      'commit': 'git-cz',
-      'prepare': 'husky',
-      'format': 'npx nx format:write',
-      'check': 'npx nx run-many --target=lint,test,build --all --skip-nx-cache'
+      commit: 'git-cz',
+      prepare: 'husky',
+      format: 'npx nx format:write',
+      check: 'npx nx run-many --target=lint,test,build --all --skip-nx-cache'
     };
 
     return json;
-   });
+  })
 
-   const projectRoot = '/';
+  const projectRoot = '/';
 
-  generateFiles(
-    tree,
-    path.join(__dirname, 'files'),
-    projectRoot,
-    {
-      overwriteStrategy: OverwriteStrategy 
-    }
-  );
+  generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
+    overwriteStrategy: OverwriteStrategy
+  });
 
   await formatFiles(tree);
 
-  const pm = detectPackageManager();
+  const packageManager = detectPackageManager();
 
-  return () => installPackagesTask(tree, false, projectRoot, pm);
+  return installDeps({ tree, alwaysRun: false, cwd: projectRoot, packageManager });
 }
 
 export default setupWsGenerator;

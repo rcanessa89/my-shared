@@ -1,0 +1,38 @@
+service: <%= name %>
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  httpApi:
+    cors: true
+  environment:
+    STAGE: ${self:provider.stage}
+    REGION: ${self:provider.region}
+
+package:
+  individually: true
+  patterns:
+    - '!dist'
+    - '!src/**'
+    - '!resources/**'
+    - '!./*.json'
+    - '!jest.config.ts'
+    - '!dynamodb_local'
+    - '!docker-compose.yaml'
+    - '!Dockerfile'
+
+functions:
+  handler:
+    handler: dist/lambdas/handler.handler
+    package:
+      patterns:
+        - './dist/lambdas/handler.cjs'
+    events:
+      - httpApi:
+          method: GET
+          path: /

@@ -4,6 +4,11 @@
       "factory": "./dist/generators/setup-ws/setup-ws",
       "schema": "./dist/generators/setup-ws/schema.json",
       "description": "Setup the workspace initial files"
+    },
+    "app": {
+      "factory": "./dist/generators/app/app",
+      "schema": "./dist/generators/app/schema.json",
+      "description": "Setup Serverless framework with Node Js app"
     }
   }
 }

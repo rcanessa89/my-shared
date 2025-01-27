@@ -1,5 +1,5 @@
 {
   "$id": "SetupWs",
-  "title": "",
+  "title": "Setup intial files schema",
   "type": "object"
 }

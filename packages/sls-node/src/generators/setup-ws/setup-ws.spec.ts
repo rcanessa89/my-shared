@@ -13,11 +13,12 @@ describe('setup-ws generator', () => {
   let tree: Tree;
 
   beforeEach(() => {
+    jest.clearAllMocks();
     tree = createTreeWithEmptyWorkspace();
   });
 
   it('should add dev dependencies to package.json', async () => {
-    const result = await setupWsGenerator(tree);
+    await setupWsGenerator(tree);
 
     const packageJson = readJson(tree, 'package.json');
 
@@ -33,7 +34,17 @@ describe('setup-ws generator', () => {
       format: 'npx nx format:write',
       check: 'npx nx run-many --target=lint,test,build --all --skip-nx-cache'
     });
-    expect(detectPackageManager).toHaveBeenCalled();
+  });
+
+  it('Should detect the package manager', async () => {
+    await setupWsGenerator(tree);
+
+    expect(detectPackageManager).toHaveBeenCalledTimes(1);
+  });
+
+  it('Should return a function', async () => {
+    const result = await setupWsGenerator(tree);
+
     expect(typeof result).toBe('function');
   });
 
