@@ -8,7 +8,8 @@ const pm = 'pnpm';
 
 jest.mock('@nx/devkit', () => ({
   ...jest.requireActual('@nx/devkit'),
-  detectPackageManager: jest.fn(() => pm)
+  detectPackageManager: jest.fn(() => pm),
+  updateJson: jest.fn()
 }));
 jest.mock('@nx/node', () => ({
   applicationGenerator: jest.fn()
@@ -17,7 +18,7 @@ jest.mock('@nx/node', () => ({
 describe('app generator', () => {
   let tree: Tree;
   const genParams = {
-    directory: 'apps',
+    directory: 'apps/api',
     name: 'api'
   };
   const runGenerator = () => appGenerator(tree, genParams);
