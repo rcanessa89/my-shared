@@ -1,3 +1,14 @@
+## 0.3.2 (2025-01-27)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing eslint and CI ([88c8d55](https://github.com/rcanessa89/my-shared/commit/88c8d55))
+- **sls-node:** fixing CI ([a38d3e0](https://github.com/rcanessa89/my-shared/commit/a38d3e0))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.3.1 (2025-01-27)
 
 ### 🩹 Fixes
