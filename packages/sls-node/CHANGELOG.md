@@ -1,3 +1,13 @@
+## 0.3.0 (2025-01-27)
+
+### 🚀 Features
+
+- **sls-node:** adding fn generator ([883041a](https://github.com/rcanessa89/my-shared/commit/883041a))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.0 (2025-01-27)
 
 ### 🚀 Features
