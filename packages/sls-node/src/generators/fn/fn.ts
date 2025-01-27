@@ -43,8 +43,7 @@ export async function fnGenerator(tree: Tree, options: FnGeneratorSchema) {
     return json;
   });
   generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
-    fileName: options.name,
-    fnName: options.name.replace(/[-_](\w)/g, (_, c) => c.toUpperCase())
+    fileName: options.name
   });
   await formatFiles(tree);
 }

@@ -1,3 +1,3 @@
-export const "<%= fnName %>" = () => {
+export const handler = () => {
   console.log('This is a lambda function!!');
 };
