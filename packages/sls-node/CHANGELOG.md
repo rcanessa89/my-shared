@@ -1,3 +1,13 @@
+## 0.3.1 (2025-01-27)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing lint warnings ([0b366b4](https://github.com/rcanessa89/my-shared/commit/0b366b4))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.3.0 (2025-01-27)
 
 ### 🚀 Features
