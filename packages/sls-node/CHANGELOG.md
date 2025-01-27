@@ -1,3 +1,13 @@
+## 0.3.3 (2025-01-27)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing the lambda file destination path ([0594ae2](https://github.com/rcanessa89/my-shared/commit/0594ae2))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.3.2 (2025-01-27)
 
 ### 🩹 Fixes
