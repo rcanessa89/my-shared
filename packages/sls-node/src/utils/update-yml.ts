@@ -6,6 +6,7 @@ import { getSlsProjectByName } from './get-sls-projects';
 export const updateYaml = async (
   tree: Tree,
   projectName: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   formatter: (doc: any) => object
 ) => {
   const projectConfig = getSlsProjectByName(tree, projectName);

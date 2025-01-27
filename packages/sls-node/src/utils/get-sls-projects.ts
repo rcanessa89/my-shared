@@ -9,7 +9,7 @@ interface SlsProject extends ProjectConfiguration {
 export const getSlsProjects = (tree: Tree): SlsProject[] =>
   Array.from(getProjects(tree))
     .filter(
-      ([_, config]) =>
+      ([, config]) =>
         tree.exists(`${config.root}/serverless.yml`) &&
         config.tags &&
         config.tags.includes(PROYECT_TAG)
