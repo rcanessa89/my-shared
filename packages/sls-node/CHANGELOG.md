@@ -1,3 +1,17 @@
+## 0.4.0 (2025-01-28)
+
+### 🚀 Features
+
+- **sls-node:** adding generators cognito and cognito pre token ([29c7bdb](https://github.com/rcanessa89/my-shared/commit/29c7bdb))
+
+### 🩹 Fixes
+
+- **sls-node:** validations, test, etc ([e705840](https://github.com/rcanessa89/my-shared/commit/e705840))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.3.3 (2025-01-27)
 
 ### 🩹 Fixes
