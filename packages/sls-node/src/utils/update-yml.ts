@@ -1,7 +1,8 @@
 import { Tree } from '@nx/devkit';
-import * as yaml from 'yaml';
+import yaml from 'yaml';
 
 import { getSlsProjectByName } from './get-sls-projects';
+import { getSlsYamlDoc } from './get-sls-yaml-doc';
 
 export const updateYaml = async (
   tree: Tree,
@@ -11,9 +12,9 @@ export const updateYaml = async (
 ) => {
   const projectConfig = getSlsProjectByName(tree, projectName);
   const serverlessPath = `${projectConfig?.root}/serverless.yml`;
-  const content = tree.read(serverlessPath, 'utf-8') || '';
-  const doc = yaml.parse(content);
+  const doc = getSlsYamlDoc(tree, projectName);
   const formattedFile = formatter(doc);
+  const yamlStr = yaml.stringify(formattedFile);
 
-  tree.write(serverlessPath, yaml.stringify(formattedFile));
+  tree.write(serverlessPath, yamlStr);
 };

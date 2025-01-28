@@ -9,7 +9,7 @@ import {
 import { applicationGenerator } from '@nx/node';
 import * as path from 'path';
 
-import { AppGeneratorSchema } from './schema';
+import { type AppGeneratorSchema } from './schema';
 import { installDeps } from '../../utils/install-deps';
 import { PROYECT_TAG } from '../../constants';
 

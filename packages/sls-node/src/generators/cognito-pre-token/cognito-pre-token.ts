@@ -9,17 +9,7 @@ export async function cognitoPreTokenGenerator(
   tree: Tree,
   options: CognitoPreTokenGeneratorSchema
 ) {
-  const projects = getSlsProjects(tree);
-  const projectConfig = projects.find(({ name }) => name === options.project);
-
-  if (!projectConfig) {
-    throw new Error(
-      `Project ${
-        options.project
-      } is not a serverless project. Available projects: ${projects.join(', ')}`
-    );
-  }
-
+  const { projectConfig } = validate(tree, options);
   const fnName = options.name || 'pre-token-generation';
 
   await fnGenerator(tree, {
@@ -46,6 +36,23 @@ export async function cognitoPreTokenGenerator(
     }
   }));
   await formatFiles(tree);
+}
+
+function validate(tree: Tree, options: CognitoPreTokenGeneratorSchema) {
+  const projects = getSlsProjects(tree);
+  const projectConfig = projects.find(({ name }) => name === options.project);
+
+  if (!projectConfig) {
+    throw new Error(
+      `Project ${
+        options.project
+      } is not a serverless project. Available projects: ${projects.join(', ')}`
+    );
+  }
+
+  return {
+    projectConfig
+  };
 }
 
 export default cognitoPreTokenGenerator;

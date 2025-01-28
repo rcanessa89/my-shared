@@ -93,7 +93,7 @@ describe('cognito generator', () => {
               - .amazonaws.com/
               - Ref: CognitoUserPool
         audience:
-          - Ref: CognitoUserPoolClient`);
+          - !Ref CognitoUserPoolClient`);
     expect(content).toContain('${file(resources/cognito.yml)}');
   });
 

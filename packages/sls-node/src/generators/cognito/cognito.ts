@@ -1,10 +1,11 @@
-import { formatFiles, generateFiles, type Tree } from '@nx/devkit';
 import * as path from 'path';
+import { formatFiles, generateFiles, type Tree } from '@nx/devkit';
 
-import { CognitoGeneratorSchema } from './schema';
+import { type CognitoGeneratorSchema } from './schema';
 import { cognitoPreTokenGenerator } from '../cognito-pre-token/cognito-pre-token';
 import { getSlsProjects } from '../../utils/get-sls-projects';
 import { updateYaml } from '../../utils/update-yml';
+import { getRefTag } from '../../utils/get-ref-tag';
 
 export async function cognitoGenerator(
   tree: Tree,
@@ -48,7 +49,7 @@ export async function cognitoGenerator(
                 ]
               ]
             },
-            audience: [{ Ref: 'CognitoUserPoolClient' }]
+            audience: [getRefTag('CognitoUserPoolClient')]
           }
         }
       }
