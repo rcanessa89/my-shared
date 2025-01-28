@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Dynamodb",
+  "title": "Serverless resource for Dynamodb",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Project name",
+      "x-prompt": "Which project would you like to add the function to?",
+      "x-dropdown": "projects"
+    },
+    "name": {
+      "type": "string",
+      "description": "Resource name"
+    }
+  },
+  "required": ["project"]
+}

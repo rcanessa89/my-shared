@@ -24,6 +24,11 @@
       "factory": "./dist/generators/cognito-pre-token/cognito-pre-token",
       "schema": "./dist/generators/cognito-pre-token/schema.json",
       "description": "cognito-pre-token generator"
+    },
+    "dynamodb": {
+      "factory": "./dist/generators/dynamodb/dynamodb",
+      "schema": "./dist/generators/dynamodb/schema.json",
+      "description": "dynamodb generator"
     }
   }
 }
