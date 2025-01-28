@@ -19,7 +19,7 @@ export async function fnGenerator(tree: Tree, options: FnGeneratorSchema) {
 
   const projectRoot = projectConfig.root;
 
-  updateYaml(tree, options.project, (doc) => ({
+  await updateYaml(tree, options.project, (doc) => ({
     ...doc,
     functions: {
       ...doc.functions,

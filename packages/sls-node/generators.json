@@ -14,6 +14,16 @@
       "factory": "./dist/generators/fn/fn",
       "schema": "./dist/generators/fn/schema.json",
       "description": "fn generator"
+    },
+    "cognito": {
+      "factory": "./dist/generators/cognito/cognito",
+      "schema": "./dist/generators/cognito/schema.json",
+      "description": "cognito generator"
+    },
+    "cognito-pre-token": {
+      "factory": "./dist/generators/cognito-pre-token/cognito-pre-token",
+      "schema": "./dist/generators/cognito-pre-token/schema.json",
+      "description": "cognito-pre-token generator"
     }
   }
 }

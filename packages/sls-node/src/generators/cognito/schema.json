@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Cognito",
+  "title": "Serverless resource for cognito",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Project name",
+      "x-prompt": "Which project would you like to add the function to?",
+      "x-dropdown": "projects"
+    },
+    "name": {
+      "type": "string",
+      "description": "Resource name"
+    },
+    "preTokenFn": {
+      "type": "boolean",
+      "description": "If creates a pre token function"
+    }
+  },
+  "required": ["project"]
+}
