@@ -40,8 +40,11 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
       configurations: {
         ...json.nx.targets.build.configurations,
         production: {
+          bundle: true,
+          declaration: false,
           minify: true,
           thirdParty: false,
+          sourcemap: false,
           esbuildOptions: {
             sourcemap: false
           }

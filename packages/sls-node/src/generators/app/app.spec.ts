@@ -9,7 +9,7 @@ const pm = 'pnpm';
 jest.mock('@nx/devkit', () => ({
   ...jest.requireActual('@nx/devkit'),
   detectPackageManager: jest.fn(() => pm),
-  updateJson: jest.fn()
+  installPackagesTask: jest.fn()
 }));
 jest.mock('@nx/node', () => ({
   applicationGenerator: jest.fn()
@@ -26,6 +26,18 @@ describe('app generator', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     tree = createTreeWithEmptyWorkspace();
+    tree.write(
+      `${genParams.directory}/package.json`,
+      `{
+      "nx": {
+        "targets": {
+          "build": {
+            "configurations": {}
+          }
+        }
+      }
+    }`
+    );
   });
 
   it('should add dev dependencies to package.json', async () => {
@@ -56,5 +68,22 @@ describe('app generator', () => {
 
     expect(applicationGenerator).toHaveBeenCalledTimes(1);
     expect(applicationGenerator).toHaveBeenCalledWith(tree, genParams);
+  });
+
+  it('should check the nx configuration in package.json', async () => {
+    await runGenerator();
+
+    const packageJson = readJson(tree, `${genParams.directory}/package.json`);
+
+    expect(packageJson.nx.targets.build.configurations.production).toEqual({
+      bundle: true,
+      declaration: false,
+      minify: true,
+      thirdParty: false,
+      sourcemap: false,
+      esbuildOptions: {
+        sourcemap: false
+      }
+    });
   });
 });
