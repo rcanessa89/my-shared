@@ -1,3 +1,18 @@
+## 0.5.0 (2025-01-30)
+
+### 🚀 Features
+
+- **sls-node:** adding docker componer for dynamodb ([cff3eba](https://github.com/rcanessa89/my-shared/commit/cff3eba))
+- **sls-node:** adding dynamodb resource generator ([d5ba43e](https://github.com/rcanessa89/my-shared/commit/d5ba43e))
+
+### 🩹 Fixes
+
+- **sls-node:** fixing serverless app generator ([8e19c02](https://github.com/rcanessa89/my-shared/commit/8e19c02))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.4.0 (2025-01-28)
 
 ### 🚀 Features
