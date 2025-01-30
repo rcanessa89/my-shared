@@ -29,6 +29,16 @@
       "factory": "./dist/generators/dynamodb/dynamodb",
       "schema": "./dist/generators/dynamodb/schema.json",
       "description": "dynamodb generator"
+    },
+    "docker-dynamodb": {
+      "factory": "./dist/generators/docker-dynamodb/docker-dynamodb",
+      "schema": "./dist/generators/docker-dynamodb/schema.json",
+      "description": "docker-dynamodb generator"
+    },
+    "wait-for-it": {
+      "factory": "./dist/generators/wait-for-it/wait-for-it",
+      "schema": "./dist/generators/wait-for-it/schema.json",
+      "description": "wait-for-it generator"
     }
   }
 }

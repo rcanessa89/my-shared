@@ -1,0 +1,29 @@
+services:
+  dynamodb:
+    image: amazon/dynamodb-local
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./dynamodb_local:/data
+    command: -jar DynamoDBLocal.jar -sharedDb -dbPath /data
+
+  dynamodb-admin:
+    image: aaronshaf/dynamodb-admin
+    restart: always
+    ports:
+      - '8001:8001'
+    environment:
+      - DYNAMO_ENDPOINT=http://dynamodb:8000
+      - AWS_REGION=us-east-1
+    depends_on:
+      - dynamodb
+
+  init:
+    image: node:22
+    depends_on:
+      - dynamodb
+    volumes:
+      - ./init-script.js:/init-script.js
+      - ./../../wait-for-it:/wait-for-it
+      - ./../../node_modules:/node_modules
+    command: sh -c "./wait-for-it dynamodb:8000 -- node ./init-script.js"

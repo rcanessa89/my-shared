@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "DockerDynamodb",
+  "title": "Include a docker compose DynamoDB",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Project name",
+      "x-prompt": "Which project would you like to add the docker compose config to?",
+      "x-dropdown": "projects"
+    },
+    "init": {
+      "type": "boolean",
+      "description": "If is true should include a javascript init script"
+    }
+  }
+}

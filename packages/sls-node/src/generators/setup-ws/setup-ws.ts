@@ -32,19 +32,24 @@ export async function setupWsGenerator(tree: Tree) {
     };
 
     return json;
-  })
+  });
 
   const projectRoot = '/';
 
   generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
-    overwriteStrategy: OverwriteStrategy
+    overwriteStrategy: OverwriteStrategy.ThrowIfExisting
   });
 
   await formatFiles(tree);
 
   const packageManager = detectPackageManager();
 
-  return installDeps({ tree, alwaysRun: false, cwd: projectRoot, packageManager });
+  return installDeps({
+    tree,
+    alwaysRun: false,
+    cwd: projectRoot,
+    packageManager
+  });
 }
 
 export default setupWsGenerator;

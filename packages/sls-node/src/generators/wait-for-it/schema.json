@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "WaitForIt",
+  "title": "A file to handle async functionalities on docker runs",
+  "type": "object"
+}

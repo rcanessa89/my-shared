@@ -57,6 +57,5 @@ describe('setup-ws generator', () => {
     expect(tree.exists('.nvmrc')).toBeTruthy();
     expect(tree.exists('commitlint.config.js')).toBeTruthy();
     expect(tree.exists('lint-staged.config.js')).toBeTruthy();
-    expect(tree.exists('wait-for-it')).toBeTruthy();
   });
 });
