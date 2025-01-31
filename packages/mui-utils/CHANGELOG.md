@@ -1,3 +1,13 @@
+## 0.1.2 (2025-01-31)
+
+### 🩹 Fixes
+
+- **mui:** deps fixes ([99f0177](https://github.com/rcanessa89/my-shared/commit/99f0177))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.1 (2025-01-31)
 
 ### 🩹 Fixes
