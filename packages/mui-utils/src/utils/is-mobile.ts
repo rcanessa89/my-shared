@@ -1,4 +1,15 @@
-export const isMobile = () =>
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
+export const isMobile = () => {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const mobileKeywords = [
+    'android',
+    'iphone',
+    'ipad',
+    'ipod',
+    'webos',
+    'blackberry',
+    'windows phone',
+    'opera mini'
+  ];
+
+  return mobileKeywords.some((keyword) => userAgent.includes(keyword));
+};
