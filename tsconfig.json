@@ -17,6 +17,9 @@
     },
     {
       "path": "./packages/sls-node"
+    },
+    {
+      "path": "./packages/mui-hook-form"
     }
   ]
 }

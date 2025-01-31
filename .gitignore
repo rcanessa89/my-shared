@@ -44,3 +44,6 @@ Thumbs.db
 test-output
 
 dynamodb_local/
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
