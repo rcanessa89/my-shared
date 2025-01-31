@@ -1,3 +1,13 @@
+## 0.6.0 (2025-01-31)
+
+### 🚀 Features
+
+- **sls-node:** adding executors ([305f55d](https://github.com/rcanessa89/my-shared/commit/305f55d))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.5.0 (2025-01-30)
 
 ### 🚀 Features
