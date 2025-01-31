@@ -1,4 +1,4 @@
-import { type ReactNode, type ReactElement } from 'react';
+import { type ReactNode } from 'react';
 import { type AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { type ExtendButtonBase } from '@mui/material/ButtonBase/ButtonBase';
 import { type ListItemButtonTypeMap } from '@mui/material/ListItemButton/ListItemButton';

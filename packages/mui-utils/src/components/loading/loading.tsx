@@ -3,7 +3,9 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Portal from '@mui/material/Portal';
 
-import { type LoadingProps } from './types';
+export interface LoadingProps {
+  show: boolean;
+}
 
 export const Loading: FC<LoadingProps> = ({ show }) =>
   show ? (

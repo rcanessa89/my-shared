@@ -12,7 +12,7 @@ export {
   type ErrorViewProps
 } from './components/error-view/error-view';
 export { Layout, type LayoutProps } from './components/layout/layout';
-export { Loading } from './components/loading/loading';
+export { Loading, type LoadingProps } from './components/loading/loading';
 export { Menu, type MenuProps } from './components/menu/menu';
 export {
   PageLayout,
