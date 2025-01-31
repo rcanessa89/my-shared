@@ -36,7 +36,7 @@ jobs:
       - name: Run Nx base
         run: |
           PACKAGE_NAME=$(echo ${{ github.ref_name }} | sed -E 's/release\/(.*)\/[0-9]+\.[0-9]+\.[0-9]+/\1/')
-          pnpx nx build $PACKAGE_NAME --skip-cache
+          pnpx nx build $PACKAGE_NAME --skip-nx-cache
           pnpx nx run-many -t test lint --projects=$PACKAGE_NAME --skipNxCache --parallel
         shell: bash
 

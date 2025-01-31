@@ -1,6 +1,13 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@emotion/styled": ["./node_modules/@emotion/styled"],
+      "@mui/material": ["./node_modules/@mui/material"],
+      "@mui/material/*": ["./node_modules/@mui/material/*"],
+      "@emotion/styled/*": ["./node_modules/@emotion/styled/*"]
+    },
     "outDir": "out-tsc/mui-utils",
     "types": [
       "node",

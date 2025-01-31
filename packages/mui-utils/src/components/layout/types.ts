@@ -21,3 +21,7 @@ export interface DrawerItem {
 export interface DrawerListProps {
   drawerItems: DrawerItem[];
 }
+
+export interface DrawerProps {
+  open: boolean;
+}
