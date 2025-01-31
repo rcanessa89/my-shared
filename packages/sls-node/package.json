@@ -19,7 +19,8 @@
   "files": [
     "dist",
     "!**/*.tsbuildinfo",
-    "generators.json"
+    "generators.json",
+    "executors.json"
   ],
   "nx": {
     "sourceRoot": "packages/sls-node/src",
@@ -49,6 +50,18 @@
             }
           ]
         }
+      },
+      "deploy": {
+        "executor": "@rcanessa/sls-node:deploy"
+      },
+      "deploy-fn": {
+        "executor": "@rcanessa/sls-node:deploy-fn"
+      },
+      "offline": {
+        "executor": "@rcanessa/sls-node:offline"
+      },
+      "remove": {
+        "executor": "@rcanessa/sls-node:remove"
       }
     },
     "name": "sls-node"
@@ -58,7 +71,10 @@
     "tslib": "^2.3.0",
     "@nx/node": "20.3.2",
     "@nx/eslint": "20.3.2",
-    "yaml": "2.7.0"
+    "yaml": "2.7.0",
+    "enquirer": "2.3.6",
+    "@aws-sdk/client-dynamodb": "3.733.0"
   },
-  "generators": "./generators.json"
+  "generators": "./generators.json",
+  "executors": "./executors.json"
 }

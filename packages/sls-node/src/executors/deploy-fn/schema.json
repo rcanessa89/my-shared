@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "DeployFn executor",
+  "description": "Deploy a serverless function",
+  "type": "object"
+}

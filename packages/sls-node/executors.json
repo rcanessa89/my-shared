@@ -1,0 +1,24 @@
+{
+  "executors": {
+    "deploy": {
+      "implementation": "./dist/executors/deploy/deploy",
+      "schema": "./dist/executors/deploy/schema.json",
+      "description": "deploy executor"
+    },
+    "deploy-fn": {
+      "implementation": "./dist/executors/deploy-fn/deploy-fn",
+      "schema": "./dist/executors/deploy-fn/schema.json",
+      "description": "deploy-fn executor"
+    },
+    "offline": {
+      "implementation": "./dist/executors/offline/offline",
+      "schema": "./dist/executors/offline/schema.json",
+      "description": "offline executor"
+    },
+    "remove": {
+      "implementation": "./dist/executors/remove/remove",
+      "schema": "./dist/executors/remove/schema.json",
+      "description": "remove executor"
+    }
+  }
+}

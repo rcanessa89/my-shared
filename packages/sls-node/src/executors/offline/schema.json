@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Offline executor",
+  "description": "Run serverless offline",
+  "type": "object"
+}
