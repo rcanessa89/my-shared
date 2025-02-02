@@ -9,7 +9,7 @@
     "dist",
     "!**/*.tsbuildinfo"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "@aws-sdk/client-dynamodb": "^3.731.1",
     "@aws-sdk/util-dynamodb": "^3.731.1",
     "tslib": "^2.3.0"

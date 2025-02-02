@@ -9,7 +9,7 @@
     "dist",
     "!**/*.tsbuildinfo"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "pino": "^9.6.0",
     "tslib": "^2.3.0"
   },

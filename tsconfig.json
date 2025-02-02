@@ -26,6 +26,9 @@
     },
     {
       "path": "./packages/cognito-client"
+    },
+    {
+      "path": "./packages/mui-login"
     }
   ]
 }
