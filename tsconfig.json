@@ -23,6 +23,9 @@
     },
     {
       "path": "./packages/mui-utils"
+    },
+    {
+      "path": "./packages/cognito-client"
     }
   ]
 }
