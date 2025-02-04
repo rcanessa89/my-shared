@@ -245,7 +245,26 @@ importers:
         specifier: ^3.24.1
         version: 3.24.1
 
-  packages/mui-login: {}
+  packages/mui-login:
+    dependencies:
+      '@emotion/react':
+        specifier: 11.14.0
+        version: 11.14.0(@types/react@18.3.1)(react@18.3.1)
+      '@emotion/styled':
+        specifier: 11.14.0
+        version: 11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1)
+      '@mui/material':
+        specifier: ^6.4.2
+        version: 6.4.2(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@rcanessa/mui-hook-form':
+        specifier: ^0.1.0
+        version: 0.1.0(a45tuiqtszcjq7vlubcrxcpz3u)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
 
   packages/mui-utils:
     dependencies:
@@ -2119,6 +2138,19 @@ packages:
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+
+  '@rcanessa/mui-hook-form@0.1.0':
+    resolution: {integrity: sha512-adCDgVUnhqFehpKOZ1212cZuHtrdUnyzCJLo2KumUyiJetrnH+KVsfgrwUsmydorGUUlqs0GBOd+hzxNktKLZA==}
+    peerDependencies:
+      '@emotion/react': 11.14.0
+      '@emotion/styled': 11.14.0
+      '@hookform/resolvers': ^3.10.0
+      '@mui/material': ^6.4.2
+      '@mui/x-date-pickers': ^7.24.1
+      react: ^18.3.1
+      react-dom: ^18.3.1
+      react-hook-form: ^7.54.2
+      zod: ^3.24.1
 
   '@rcanessa/node-logger@0.3.3':
     resolution: {integrity: sha512-ua3lyaqQzcJnai/RNxKkagH9OjnbgzWT7cbuvzF0AilcysAre8Jtzi4cm8DGyI0RBonOCSuuplwD6vuUfHCF/A==}
@@ -10602,6 +10634,18 @@ snapshots:
   '@polka/url@1.0.0-next.28': {}
 
   '@popperjs/core@2.11.8': {}
+
+  '@rcanessa/mui-hook-form@0.1.0(a45tuiqtszcjq7vlubcrxcpz3u)':
+    dependencies:
+      '@emotion/react': 11.14.0(@types/react@18.3.1)(react@18.3.1)
+      '@emotion/styled': 11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1)
+      '@hookform/resolvers': 3.10.0(react-hook-form@7.54.2(react@18.3.1))
+      '@mui/material': 6.4.2(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mui/x-date-pickers': 7.24.1(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1))(@mui/material@6.4.2(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@mui/system@6.4.2(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(dayjs@1.11.13)(luxon@3.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-hook-form: 7.54.2(react@18.3.1)
+      zod: 3.24.1
 
   '@rcanessa/node-logger@0.3.3':
     dependencies:
