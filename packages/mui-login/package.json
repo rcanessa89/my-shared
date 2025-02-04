@@ -1,6 +1,10 @@
 {
   "name": "@rcanessa/mui-login",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rcanessa89/my-shared"
+  },
   "nx": {
     "name": "mui-login",
     "projectType": "library",
