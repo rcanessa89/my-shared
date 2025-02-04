@@ -257,8 +257,8 @@ importers:
         specifier: ^6.4.2
         version: 6.4.2(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@rcanessa/mui-hook-form':
-        specifier: ^0.1.0
-        version: 0.1.0(a45tuiqtszcjq7vlubcrxcpz3u)
+        specifier: ^0.1.1
+        version: 0.1.1(a45tuiqtszcjq7vlubcrxcpz3u)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2139,8 +2139,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@rcanessa/mui-hook-form@0.1.0':
-    resolution: {integrity: sha512-adCDgVUnhqFehpKOZ1212cZuHtrdUnyzCJLo2KumUyiJetrnH+KVsfgrwUsmydorGUUlqs0GBOd+hzxNktKLZA==}
+  '@rcanessa/mui-hook-form@0.1.1':
+    resolution: {integrity: sha512-yHREZtsrH1WDjGe2vUSbdtUd7xThk4CNffLtqHXWCtyVTgk6HDcb0LQFYjprMMGUOsRIB4jTJVVp3mt00vSA1A==}
     peerDependencies:
       '@emotion/react': 11.14.0
       '@emotion/styled': 11.14.0
@@ -10635,7 +10635,7 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@rcanessa/mui-hook-form@0.1.0(a45tuiqtszcjq7vlubcrxcpz3u)':
+  '@rcanessa/mui-hook-form@0.1.1(a45tuiqtszcjq7vlubcrxcpz3u)':
     dependencies:
       '@emotion/react': 11.14.0(@types/react@18.3.1)(react@18.3.1)
       '@emotion/styled': 11.14.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1)

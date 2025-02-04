@@ -3,6 +3,9 @@
   "include": [],
   "references": [
     {
+      "path": "../mui-hook-form"
+    },
+    {
       "path": "./tsconfig.lib.json"
     },
     {
