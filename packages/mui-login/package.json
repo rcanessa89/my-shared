@@ -1,6 +1,6 @@
 {
   "name": "@rcanessa/mui-login",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "nx": {
     "name": "mui-login",
     "projectType": "library",
