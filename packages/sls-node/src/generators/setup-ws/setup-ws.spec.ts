@@ -26,6 +26,7 @@ describe('setup-ws generator', () => {
       'lint-staged': '^15.4.1',
       '@commitlint/cli': '^19.6.1',
       '@commitlint/config-conventional': '^19.6.0',
+      'cz-conventional-changelog': '^3.3.0',
       husky: '^9.1.7'
     });
     expect(packageJson.scripts).toEqual({
