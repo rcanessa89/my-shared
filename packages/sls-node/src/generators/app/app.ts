@@ -69,7 +69,7 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
 
   return installDeps({
     tree,
-    alwaysRun: false,
+    alwaysRun: true,
     cwd: projectRoot,
     packageManager
   });
