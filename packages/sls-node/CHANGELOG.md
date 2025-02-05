@@ -1,3 +1,13 @@
+## 0.6.2 (2025-02-05)
+
+### 🩹 Fixes
+
+- **util:** install deps after generator on app and setup ws ([5f34709](https://github.com/rcanessa89/my-shared/commit/5f34709))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.6.1 (2025-02-04)
 
 ### 🩹 Fixes
