@@ -1,5 +1,3 @@
-import { type AttributeValue } from '@aws-sdk/client-dynamodb';
-
 export interface IListArgs extends IKeyConditionExpressions {
   limit?: number;
   nextToken?: string;
@@ -34,11 +32,6 @@ export type IItem<T> = T & {
 export interface IModelDTO {
   createdAt: string;
   updatedAt: string;
-}
-
-export interface IItemHandler<T, Dto = T & IModelDTO> {
-  toItem(m: T): Record<string, AttributeValue>;
-  fromItem(item: Record<string, AttributeValue>): Dto;
 }
 
 export interface IDynamoService<T, FindOneArgs, Dto = T & IModelDTO> {

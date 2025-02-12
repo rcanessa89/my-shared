@@ -11,7 +11,6 @@ import {
   type IDynamoService,
   type IListResult,
   type IModelDTO,
-  type IItemHandler,
   type IItem
 } from './types';
 import { getClient } from './utils/get-client';
@@ -20,29 +19,33 @@ import { getUpdateExpression } from './utils/get-update-expression';
 import { DynamoErrorNotFound, DynamoErrorUnknown } from './utils/dynamo-error';
 
 export abstract class DynamoService<T, FindOneArgs, Dto = T & IModelDTO>
-  implements IDynamoService<T, FindOneArgs, Dto>, IItemHandler<T, Dto>
+  implements IDynamoService<T, FindOneArgs, Dto>
 {
+  public static get defaultRemoveFromItem() {
+    return ['PK', 'SK', 'type'] as ['PK', 'SK', 'type'];
+  }
+
   protected readonly marshall = marshall;
   protected readonly unmarshall = unmarshall;
   protected readonly type: string;
   private readonly client: DynamoDB;
   private readonly tableName: string;
-  private readonly fromItemRemove: (keyof IItem<T>)[];
+  private readonly removeFromItem: (keyof IItem<T>)[];
 
   constructor({
     tableName,
     clientConfig = {},
-    fromItemRemove = ['PK', 'SK', 'type'],
+    removeFromItem = DynamoService.defaultRemoveFromItem,
     type
   }: {
     tableName: string;
     clientConfig?: DynamoDBClientConfig;
-    fromItemRemove?: (keyof IItem<T>)[];
+    removeFromItem?: (keyof IItem<T>)[];
     type: string;
   }) {
     this.client = getClient(clientConfig);
     this.tableName = tableName;
-    this.fromItemRemove = fromItemRemove;
+    this.removeFromItem = removeFromItem;
     this.type = type;
   }
 
@@ -175,7 +178,7 @@ export abstract class DynamoService<T, FindOneArgs, Dto = T & IModelDTO>
     };
   }
 
-  public toItem(
+  protected toItem(
     m: Omit<T, 'createdAt' | 'updatedAt'>
   ): Record<string, AttributeValue> {
     return this.marshall({
@@ -186,12 +189,12 @@ export abstract class DynamoService<T, FindOneArgs, Dto = T & IModelDTO>
     });
   }
 
-  public fromItem(item: Record<string, AttributeValue>): Dto {
+  protected fromItem(item: Record<string, AttributeValue>): Dto {
     const data = this.unmarshall(item);
 
     return Object.fromEntries(
       Object.entries(data).filter(
-        ([key]) => !this.fromItemRemove.includes(key as keyof IItem<T>)
+        ([key]) => !this.removeFromItem.includes(key as keyof IItem<T>)
       )
     ) as Dto;
   }
