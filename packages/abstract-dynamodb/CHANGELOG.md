@@ -1,3 +1,13 @@
+## 0.2.0 (2025-02-12)
+
+### 🚀 Features
+
+- **abstract-dynamodb:** exporting types ([f72411c](https://github.com/rcanessa89/my-shared/commit/f72411c))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.12 (2025-02-04)
 
 ### 🩹 Fixes
