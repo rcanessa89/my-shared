@@ -1,3 +1,13 @@
+## 0.2.0 (2025-02-13)
+
+### 🚀 Features
+
+- **react dep:** updagrading to react 19 ([dc30fba](https://github.com/rcanessa89/my-shared/commit/dc30fba))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.1 (2025-02-04)
 
 ### 🩹 Fixes
