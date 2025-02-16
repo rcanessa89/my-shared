@@ -1,3 +1,13 @@
+## 0.2.2 (2025-02-16)
+
+### 🩹 Fixes
+
+- **mui-action-form:** fixing exports ([f73c19d](https://github.com/rcanessa89/my-shared/commit/f73c19d))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.1 (2025-02-16)
 
 ### 🩹 Fixes
