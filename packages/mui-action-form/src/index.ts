@@ -1,5 +1,6 @@
 export { z } from 'zod';
 export { FormProvider } from './form-provider';
+export { Form, type FormProps } from './components/form';
 export { TextField, type TextFieldProps } from './components/text-field';
 export { Select, type SelectProps } from './components/select';
 export { DatePicker, type DatePickerProps } from './components/date-picker';
