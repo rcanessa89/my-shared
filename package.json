@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "commit": "git-cz",
+    "commit": "cz",
     "prepare": "husky",
     "format": "npx nx format:write",
     "check": "npx nx run-many --target=lint,test,build --all --skip-nx-cache",
