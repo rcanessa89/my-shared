@@ -29,9 +29,6 @@
     },
     {
       "path": "./packages/mui-login"
-    },
-    {
-      "path": "./packages/mui-action-form"
     }
   ]
 }
