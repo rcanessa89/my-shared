@@ -1,3 +1,13 @@
+## 0.2.2 (2025-02-17)
+
+### 🩹 Fixes
+
+- **abstract-dynamodb:** role back of the list args infer types ([8573c9e](https://github.com/rcanessa89/my-shared/commit/8573c9e))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.1 (2025-02-17)
 
 ### 🩹 Fixes
