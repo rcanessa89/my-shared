@@ -1,3 +1,13 @@
+## 0.1.2 (2025-02-17)
+
+### 🩹 Fixes
+
+- **cognito:** exporting DeliveryMediumType ([afd1e20](https://github.com/rcanessa89/my-shared/commit/afd1e20))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.1 (2025-02-04)
 
 ### 🩹 Fixes
