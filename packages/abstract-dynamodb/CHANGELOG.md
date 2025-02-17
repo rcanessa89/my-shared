@@ -1,3 +1,13 @@
+## 0.2.1 (2025-02-17)
+
+### 🩹 Fixes
+
+- **abstract-dynamodb:** fixing list types to infer the args ([8b7a76a](https://github.com/rcanessa89/my-shared/commit/8b7a76a))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.0 (2025-02-12)
 
 ### 🚀 Features
