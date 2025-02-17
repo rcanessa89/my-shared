@@ -1,3 +1,5 @@
+export { DeliveryMediumType } from '@aws-sdk/client-cognito-identity-provider';
+
 // User service
 export { type IUserService } from './interfaces/i-user-service';
 export { type IUserServiceFindOneInput } from './interfaces/i-user-service-find-one-input';
