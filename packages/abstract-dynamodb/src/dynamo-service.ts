@@ -52,11 +52,11 @@ export abstract class DynamoService<T, FindOneArgs, Dto = T & IModelDTO>
   protected abstract pk(m: unknown): string;
   protected abstract sk?(m: unknown): string;
 
-  public async list<L extends IListArgs>({
+  public async list({
     limit = DEFAULT_LIMIT,
     nextToken,
     ...keyConditions
-  }: L): Promise<IListResult<Dto>> {
+  }: IListArgs): Promise<IListResult<Dto>> {
     const {
       expressionAttributeNames,
       expressionAttributeValues,

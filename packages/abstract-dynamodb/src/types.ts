@@ -35,7 +35,7 @@ export interface IModelDTO {
 }
 
 export interface IDynamoService<T, FindOneArgs, Dto = T & IModelDTO> {
-  list<L extends IListArgs>(args: L): Promise<IListResult<Dto>>;
+  list(args: IListArgs): Promise<IListResult<Dto>>;
   findOne(args: FindOneArgs): Promise<Dto | null>;
   create(args: T): Promise<Dto>;
   update(args: FindOneArgs): Promise<Dto>;
