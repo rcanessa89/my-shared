@@ -33,14 +33,19 @@ export async function fnGenerator(tree: Tree, options: FnGeneratorSchema) {
 
   updateJson(tree, jsonPath, (json) => {
     const targets = { ...(hasPackageJson ? json.nx.targets : json.targets) };
-
-    Object.assign(json.nx.targets.build.options, {
+    const jsonChanges = {
       ...targets.build.options,
       additionalEntryPoints: [
         ...(targets.build.options.additionalEntryPoints || []),
         entry
       ]
-    });
+    };
+
+    if (hasPackageJson) {
+      Object.assign(json.nx.targets.build.options, jsonChanges);
+    } else {
+      Object.assign(json.targets.build.options, jsonChanges);
+    }
 
     return json;
   });
