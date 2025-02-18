@@ -72,10 +72,10 @@
     "name": "sls-node"
   },
   "peerDependencies": {
-    "@nx/devkit": "20.3.3",
+    "@nx/devkit": "20.4.0",
     "tslib": "^2.3.0",
-    "@nx/node": "20.3.2",
-    "@nx/eslint": "20.3.2",
+    "@nx/node": "20.4.0",
+    "@nx/eslint": "20.4.0",
     "yaml": "2.7.0",
     "enquirer": "2.3.6",
     "@aws-sdk/client-dynamodb": "3.733.0"
