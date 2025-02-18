@@ -35,15 +35,16 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
     : `${projectRoot}/project.json`;
 
   updateJson(tree, jsonPath, (json) => {
+    const targets = { ...(hasPackageJson ? json.nx.targets : json.targets) };
     const jsonChanges = {
       options: {
-        ...json.nx.targets.build.options,
+        ...targets.build.options,
         outputPath: `${projectRoot}/dist`,
         main: `${projectRoot}/src/main.ts`,
         additionalEntryPoints: [`${projectRoot}/src/lambdas/handler.ts`]
       },
       configurations: {
-        ...json.nx.targets.build.configurations,
+        ...targets.build.configurations,
         production: {
           bundle: true,
           declaration: false,
