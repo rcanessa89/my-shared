@@ -1,3 +1,13 @@
+## 0.6.5 (2025-02-18)
+
+### 🩹 Fixes
+
+- **sls-node:** fix assets configuration on build ([6bb2f4a](https://github.com/rcanessa89/my-shared/commit/6bb2f4a))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.6.4 (2025-02-18)
 
 ### 🩹 Fixes
