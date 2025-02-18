@@ -27,11 +27,19 @@ export async function fnGenerator(tree: Tree, options: FnGeneratorSchema) {
       }
     }
   }));
-  updateJson(tree, `${projectRoot}/package.json`, (json) => {
+
+  const hasPackageJson = tree.exists(`${projectRoot}/package.json`);
+  const jsonPath = hasPackageJson
+    ? `${projectRoot}/package.json`
+    : `${projectRoot}/project.json`;
+
+  updateJson(tree, jsonPath, (json) => {
+    const targets = { ...(hasPackageJson ? json.nx.targets : json.targets) };
+
     Object.assign(json.nx.targets.build.options, {
-      ...json.nx.targets.build.options,
+      ...targets.build.options,
       additionalEntryPoints: [
-        ...(json.nx.targets.build.options.additionalEntryPoints || []),
+        ...(targets.build.options.additionalEntryPoints || []),
         entry
       ]
     });
