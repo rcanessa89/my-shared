@@ -1,3 +1,13 @@
+## 0.6.8 (2025-02-18)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing fn generator project config json ([591d161](https://github.com/rcanessa89/my-shared/commit/591d161))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.6.7 (2025-02-18)
 
 ### 🩹 Fixes
