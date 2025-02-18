@@ -11,6 +11,7 @@ import * as path from 'path';
 
 import { type AppGeneratorSchema } from './schema';
 import { installDeps } from '../../utils/install-deps';
+import { getProjectJsonPath } from '../../utils/get-project-json-path';
 import { PROYECT_TAG } from '../../constants';
 
 const getTags = (tags?: string) => {
@@ -29,10 +30,7 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
 
   await applicationGenerator(tree, options);
 
-  const hasPackageJson = tree.exists(`${projectRoot}/package.json`);
-  const jsonPath = hasPackageJson
-    ? `${projectRoot}/package.json`
-    : `${projectRoot}/project.json`;
+  const { hasPackageJson, jsonPath } = getProjectJsonPath(tree, projectRoot);
 
   updateJson(tree, jsonPath, (json) => {
     const targets = { ...(hasPackageJson ? json.nx.targets : json.targets) };

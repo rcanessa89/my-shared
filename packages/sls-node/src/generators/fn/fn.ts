@@ -11,6 +11,7 @@ import { type FnGeneratorSchema } from './schema';
 import { getSlsProjects } from '../../utils/get-sls-projects';
 import { updateYaml } from '../../utils/update-yml';
 import { getSlsYamlDoc } from '../../utils/get-sls-yaml-doc';
+import { getProjectJsonPath } from '../../utils/get-project-json-path';
 
 export async function fnGenerator(tree: Tree, options: FnGeneratorSchema) {
   const { projectRoot, entry } = validate(tree, options);
@@ -28,10 +29,7 @@ export async function fnGenerator(tree: Tree, options: FnGeneratorSchema) {
     }
   }));
 
-  const hasPackageJson = tree.exists(`${projectRoot}/package.json`);
-  const jsonPath = hasPackageJson
-    ? `${projectRoot}/package.json`
-    : `${projectRoot}/project.json`;
+  const { hasPackageJson, jsonPath } = getProjectJsonPath(tree, projectRoot);
 
   updateJson(tree, jsonPath, (json) => {
     const targets = { ...(hasPackageJson ? json.nx.targets : json.targets) };
@@ -73,9 +71,12 @@ function validate(tree: Tree, options: FnGeneratorSchema) {
   }
 
   const projectRoot = projectConfig.root;
-  const pkJson = readJson(tree, `${projectRoot}/package.json`);
-  const entryPoints =
-    pkJson.nx.targets.build.options.additionalEntryPoints || [];
+  const { hasPackageJson, jsonPath } = getProjectJsonPath(tree, projectRoot);
+  const jsonConfig = readJson(tree, jsonPath);
+  const targets = {
+    ...(hasPackageJson ? jsonConfig.nx.targets : jsonConfig.targets)
+  };
+  const entryPoints = targets.build.options.additionalEntryPoints || [];
   const entry = `${projectRoot}/src/lambdas/${options.name}.ts`;
 
   if (entryPoints.includes(entry)) {
