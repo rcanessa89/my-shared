@@ -1,3 +1,13 @@
+## 0.6.4 (2025-02-18)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing update project json ([9cbb473](https://github.com/rcanessa89/my-shared/commit/9cbb473))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.6.3 (2025-02-18)
 
 ### 🩹 Fixes
