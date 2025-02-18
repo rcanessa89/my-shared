@@ -1,3 +1,13 @@
+## 0.6.3 (2025-02-18)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing json file dest for build changes ([79b3569](https://github.com/rcanessa89/my-shared/commit/79b3569))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.6.2 (2025-02-05)
 
 ### 🩹 Fixes
