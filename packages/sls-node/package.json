@@ -47,6 +47,11 @@
               "input": "./packages/sls-node/src",
               "glob": "**/*.d.ts",
               "output": "."
+            },
+            {
+              "glob": "**/files/**/*",
+              "input": "./packages/sls-node/src/generators",
+              "output": "generators"
             }
           ]
         }
