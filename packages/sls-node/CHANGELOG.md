@@ -1,3 +1,13 @@
+## 0.6.7 (2025-02-18)
+
+### 🩹 Fixes
+
+- **sls-node:** fixing fn generator json config validation ([06a104a](https://github.com/rcanessa89/my-shared/commit/06a104a))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.6.6 (2025-02-18)
 
 ### 🩹 Fixes
