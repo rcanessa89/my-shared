@@ -29,8 +29,13 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
 
   await applicationGenerator(tree, options);
 
-  updateJson(tree, `${projectRoot}/package.json`, (json) => {
-    Object.assign(json.nx.targets.build, {
+  const hasPackageJson = tree.exists(`${projectRoot}/package.json`);
+  const jsonPath = hasPackageJson
+    ? `${projectRoot}/package.json`
+    : `${projectRoot}/project.json`;
+
+  updateJson(tree, jsonPath, (json) => {
+    const jsonChanges = {
       options: {
         ...json.nx.targets.build.options,
         outputPath: `${projectRoot}/dist`,
@@ -50,7 +55,13 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
           }
         }
       }
-    });
+    };
+
+    if (hasPackageJson) {
+      Object.assign(json.nx.targets.build, jsonChanges);
+    } else {
+      Object.assign(json.targets.build, jsonChanges);
+    }
 
     return json;
   });
