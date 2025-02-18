@@ -1,3 +1,13 @@
+## 0.6.6 (2025-02-18)
+
+### 🩹 Fixes
+
+- **sls-node:** ficing fn generator update project json data ([41a196e](https://github.com/rcanessa89/my-shared/commit/41a196e))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.6.5 (2025-02-18)
 
 ### 🩹 Fixes
