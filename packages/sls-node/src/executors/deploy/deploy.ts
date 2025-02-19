@@ -9,7 +9,14 @@ const runExecutor: PromiseExecutor<DeployExecutorSchema> = async (
   _,
   context: ExecutorContext
 ) => {
-  const { stage, profile, projectConfig } = await getSlsArgs(context);
+  if (!context.projectName) {
+    throw new Error(
+      `No project name on executor context: ${context.projectName}`
+    );
+  }
+
+  const projectConfig = context.projectGraph.nodes[context.projectName];
+  const { stage, profile } = await getSlsArgs();
 
   await slsSession({ profile });
   await buildCommand(projectConfig.name);
