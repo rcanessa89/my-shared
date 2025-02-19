@@ -131,4 +131,24 @@ export class CognitoClient {
       user.signOut();
     }
   }
+
+  public getCognitoToken() {
+    return new Promise((resolve, reject) => {
+      const user = this.cognitoUserPool.getCurrentUser();
+
+      if (!user) {
+        return reject(new Error('No current user'));
+      }
+
+      user.getSession((error: Error, session: CognitoUserSession | null) => {
+        if (error) {
+          reject(error);
+        } else if (session) {
+          const token = session.getIdToken().getJwtToken();
+
+          resolve(token);
+        }
+      });
+    });
+  }
 }
