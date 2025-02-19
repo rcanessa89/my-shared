@@ -1,3 +1,13 @@
+## 0.7.0 (2025-02-19)
+
+### 🚀 Features
+
+- **cognito-client:** adding getCognitoToken method ([d833609](https://github.com/rcanessa89/my-shared/commit/d833609))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.6.8 (2025-02-18)
 
 ### 🩹 Fixes
