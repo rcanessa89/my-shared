@@ -1,3 +1,13 @@
+## 0.1.3 (2025-02-19)
+
+### 🩹 Fixes
+
+- **root:** deps versions ([a39faa7](https://github.com/rcanessa89/my-shared/commit/a39faa7))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.1.2 (2025-02-17)
 
 ### 🩹 Fixes

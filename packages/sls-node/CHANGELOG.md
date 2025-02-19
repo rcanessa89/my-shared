@@ -1,3 +1,14 @@
+## 0.7.1 (2025-02-19)
+
+### 🩹 Fixes
+
+- **root:** deps versions ([a39faa7](https://github.com/rcanessa89/my-shared/commit/a39faa7))
+- **sls-node:** fixing executors project selection ([6ac4434](https://github.com/rcanessa89/my-shared/commit/6ac4434))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.7.0 (2025-02-19)
 
 ### 🚀 Features
