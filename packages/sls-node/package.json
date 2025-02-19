@@ -1,6 +1,6 @@
 {
   "name": "@rcanessa/sls-node",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/rcanessa89/my-shared"
@@ -72,13 +72,13 @@
     "name": "sls-node"
   },
   "peerDependencies": {
-    "@nx/devkit": "20.4.0",
+    "@nx/devkit": "20.3.3",
     "tslib": "^2.3.0",
     "@nx/node": "20.4.0",
-    "@nx/eslint": "20.4.0",
+    "@nx/eslint": "20.3.2",
     "yaml": "2.7.0",
     "enquirer": "2.3.6",
-    "@aws-sdk/client-dynamodb": "3.733.0"
+    "@aws-sdk/client-dynamodb": "^3.750.0"
   },
   "generators": "./generators.json",
   "executors": "./executors.json"

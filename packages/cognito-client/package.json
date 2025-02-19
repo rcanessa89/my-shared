@@ -1,6 +1,6 @@
 {
   "name": "@rcanessa/cognito-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/rcanessa89/my-shared"
@@ -27,7 +27,7 @@
     "name": "cognito-client"
   },
   "peerDependencies": {
-    "tslib": "^2.3.0",
-    "amazon-cognito-identity-js": "^6.3.12"
+    "tslib": "2.8.1",
+    "amazon-cognito-identity-js": "6.3.12"
   }
 }

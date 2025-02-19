@@ -1,6 +1,6 @@
 {
   "name": "@rcanessa/abstract-dynamodb",
-  "version": "0.2.2",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/rcanessa89/my-shared"
@@ -10,9 +10,9 @@
     "!**/*.tsbuildinfo"
   ],
   "peerDependencies": {
-    "@aws-sdk/client-dynamodb": "^3.731.1",
-    "@aws-sdk/util-dynamodb": "^3.731.1",
-    "tslib": "^2.3.0"
+    "@aws-sdk/client-dynamodb": "3.750.0",
+    "@aws-sdk/util-dynamodb": "3.750.0",
+    "tslib": "2.8.1"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
