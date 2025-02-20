@@ -1,3 +1,5 @@
+'use client';
+
 import { type FC } from 'react';
 import TextField from '@mui/material/TextField';
 import {

@@ -1,3 +1,5 @@
+'use client';
+
 import { type FC } from 'react';
 import MuiTextField, {
   type TextFieldProps as MuiTextFieldProps

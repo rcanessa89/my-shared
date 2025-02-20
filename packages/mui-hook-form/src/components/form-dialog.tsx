@@ -1,3 +1,5 @@
+'use client';
+
 import { type FC, type PropsWithChildren } from 'react';
 import Button from '@mui/material/Button';
 import Dialog, { type DialogProps } from '@mui/material/Dialog';
