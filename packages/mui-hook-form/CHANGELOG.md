@@ -1,3 +1,13 @@
+## 0.2.3 (2025-02-20)
+
+### 🩹 Fixes
+
+- **mui-hook-form:** export useFormContext ([4010d3c](https://github.com/rcanessa89/my-shared/commit/4010d3c))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.2 (2025-02-20)
 
 ### 🩹 Fixes
