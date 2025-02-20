@@ -1,3 +1,13 @@
+## 0.2.2 (2025-02-20)
+
+### 🩹 Fixes
+
+- **root:** implementing to next using the 'use client' directive ([8453baa](https://github.com/rcanessa89/my-shared/commit/8453baa))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.2.1 (2025-02-19)
 
 ### 🩹 Fixes
