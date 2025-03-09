@@ -39,7 +39,8 @@ describe('getLogger', () => {
       expect.objectContaining({
         name: 'test-app',
         level: 'info'
-      })
+      }),
+      undefined
     );
   });
 
@@ -58,7 +59,8 @@ describe('getLogger', () => {
         name: 'custom-app',
         level: 'error',
         customField: 'value'
-      })
+      }),
+      undefined
     );
   });
 
@@ -115,7 +117,8 @@ describe('getLogger', () => {
           level: expect.any(Function),
           log: expect.any(Function)
         }
-      })
+      }),
+      undefined
     );
   });
 });
