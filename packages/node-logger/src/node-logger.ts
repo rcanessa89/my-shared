@@ -1,4 +1,8 @@
-import pino, { type LoggerOptions, type Logger } from 'pino';
+import pino, {
+  type LoggerOptions,
+  type Logger,
+  type DestinationStream
+} from 'pino';
 
 const formatters: LoggerOptions['formatters'] = {
   bindings: (bindings) => {
@@ -9,15 +13,21 @@ const formatters: LoggerOptions['formatters'] = {
   level: (label: string) => ({ level: label.toUpperCase() })
 };
 
-export const getLogger = (opt: Partial<LoggerOptions> = {}): Logger =>
-  pino({
-    name: opt.name || process.env['LOGGER_NAME'] || 'node-app',
-    level: opt.level || process.env['LOGGER_LEVEL'] || 'trace',
-    messageKey: 'message',
-    timestamp: () => `,"timestamp":"${new Date(Date.now()).toISOString()}"`,
-    ...opt,
-    formatters: {
-      ...formatters,
-      ...(opt.formatters || {})
-    }
-  });
+export const getLogger = (
+  opt: Partial<LoggerOptions> = {},
+  stream?: DestinationStream
+): Logger =>
+  pino(
+    {
+      name: opt.name || process.env['LOGGER_NAME'] || 'node-app',
+      level: opt.level || process.env['LOGGER_LEVEL'] || 'trace',
+      messageKey: 'message',
+      timestamp: () => `,"timestamp":"${new Date(Date.now()).toISOString()}"`,
+      ...opt,
+      formatters: {
+        ...formatters,
+        ...(opt.formatters || {})
+      }
+    },
+    stream
+  );
