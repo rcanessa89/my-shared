@@ -1,3 +1,13 @@
+## 0.4.0 (2025-03-09)
+
+### 🚀 Features
+
+- **node-logger:** exporting transport from pino ([257f375](https://github.com/rcanessa89/my-shared/commit/257f375))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.3.6 (2025-03-09)
 
 ### 🩹 Fixes
