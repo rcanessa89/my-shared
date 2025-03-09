@@ -1,3 +1,13 @@
+## 0.3.6 (2025-03-09)
+
+### 🩹 Fixes
+
+- **node-logger:** adding stream param to getLogger fn ([1077239](https://github.com/rcanessa89/my-shared/commit/1077239))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.3.5 (2025-02-19)
 
 ### 🩹 Fixes
