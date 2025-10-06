@@ -71,7 +71,7 @@
     },
     "name": "sls-node"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@nx/devkit": "21.6.3",
     "tslib": "^2.8.1",
     "@nx/node": "21.6.3",

@@ -92,8 +92,7 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
     tree,
     {},
     {
-      serverless: '^4.20.2',
-      'serverless-offline': '^14.4.0'
+      serverless: '^4.20.2'
     }
   );
 
