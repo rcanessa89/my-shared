@@ -88,7 +88,8 @@
       "aws-sdk",
       "core-js",
       "esbuild",
-      "nx"
+      "nx",
+      "unrs-resolver"
     ]
   }
 }
