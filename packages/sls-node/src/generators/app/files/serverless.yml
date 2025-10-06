@@ -25,6 +25,7 @@ package:
     - '!dynamodb_local'
     - '!docker-compose.yaml'
     - '!Dockerfile'
+    - '!serverless.yml'
 
 functions:
   handler:

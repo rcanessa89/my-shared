@@ -36,8 +36,8 @@ export const slsFnDeploy = (args: SlsCommandFnDeployArgs) =>
 export const slsRemove = (args: SlsCommandArgs) =>
   executeCommand(SLS_COMMAND, buildSlsCommandArgs('remove', args));
 
-export const slsOffline = () =>
-  executeCommand(SLS_COMMAND, ['offline', '--verbose']);
+export const slsOffline = (config: string) =>
+  executeCommand(SLS_COMMAND, ['offline', '--config', config, '--verbose']);
 
 export const slsSession = async ({ profile }: { profile: string }) => {
   try {

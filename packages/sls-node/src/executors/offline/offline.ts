@@ -17,7 +17,7 @@ const runExecutor: PromiseExecutor<OfflineExecutorSchema> = async (
   const projectConfig = context.projectGraph.nodes[context.projectName];
 
   await buildCommand(projectConfig.name);
-  await slsOffline();
+  await slsOffline(`${projectConfig.data.root}/serverless.yml`);
 
   return { success: true };
 };
