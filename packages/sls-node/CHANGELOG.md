@@ -1,3 +1,13 @@
+## 0.7.7 (2025-10-06)
+
+### 🩹 Fixes
+
+- fixing serverless offline ([8e619b5](https://github.com/rcanessa89/my-shared/commit/8e619b5))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.7.6 (2025-10-06)
 
 ### 🩹 Fixes
