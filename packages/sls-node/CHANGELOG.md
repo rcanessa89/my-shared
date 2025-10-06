@@ -1,3 +1,13 @@
+## 0.7.4 (2025-10-06)
+
+### 🩹 Fixes
+
+- fixing stuffs ([baf29ce](https://github.com/rcanessa89/my-shared/commit/baf29ce))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.7.3 (2025-10-06)
 
 ### 🩹 Fixes
