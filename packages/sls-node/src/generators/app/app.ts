@@ -34,6 +34,23 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
 
   updateJson(tree, jsonPath, (json) => {
     const targets = { ...(hasPackageJson ? json.nx.targets : json.targets) };
+    const newTargets = {
+      deploy: {
+        executor: '@rcanessa/sls-node:deploy',
+        dependsOn: ['build']
+      },
+      'deploy-fn': {
+        executor: '@rcanessa/sls-node:deploy-fn',
+        dependsOn: ['build']
+      },
+      offline: {
+        executor: '@rcanessa/sls-node:offline',
+        dependsOn: ['build']
+      },
+      remove: {
+        executor: '@rcanessa/sls-node:remove'
+      }
+    };
     const jsonChanges = {
       options: {
         ...targets.build.options,
@@ -58,29 +75,15 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
 
     if (hasPackageJson) {
       Object.assign(json.nx.targets.build, jsonChanges);
+      Object.assign(json.nx.targets, {
+        ...newTargets
+      });
     } else {
       Object.assign(json.targets.build, jsonChanges);
+      Object.assign(json.targets, {
+        ...newTargets
+      });
     }
-
-    // Assign targets
-    Object.assign(json.targets, {
-      ...json.targets,
-      deploy: {
-        executor: '@rcanessa/sls-node:deploy',
-        dependsOn: ['build']
-      },
-      'deploy-fn': {
-        executor: '@rcanessa/sls-node:deploy-fn',
-        dependsOn: ['build']
-      },
-      offline: {
-        executor: '@rcanessa/sls-node:offline',
-        dependsOn: ['build']
-      },
-      remove: {
-        executor: '@rcanessa/sls-node:remove'
-      }
-    });
 
     return json;
   });
