@@ -1,3 +1,13 @@
+## 0.7.2 (2025-10-06)
+
+### 🩹 Fixes
+
+- fixing eslint on mui-hoof-form ([a1add97](https://github.com/rcanessa89/my-shared/commit/a1add97))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.7.1 (2025-02-19)
 
 ### 🩹 Fixes
