@@ -62,6 +62,26 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
       Object.assign(json.targets.build, jsonChanges);
     }
 
+    // Assign targets
+    Object.assign(json.targets, {
+      ...json.targets,
+      deploy: {
+        executor: '@rcanessa/sls-node:deploy',
+        dependsOn: ['build']
+      },
+      'deploy-fn': {
+        executor: '@rcanessa/sls-node:deploy-fn',
+        dependsOn: ['build']
+      },
+      offline: {
+        executor: '@rcanessa/sls-node:offline',
+        dependsOn: ['build']
+      },
+      remove: {
+        executor: '@rcanessa/sls-node:remove'
+      }
+    });
+
     return json;
   });
 
@@ -69,7 +89,7 @@ export async function appGenerator(tree: Tree, options: AppGeneratorSchema) {
     tree,
     {},
     {
-      serverless: '^4.5.0',
+      serverless: '^4.20.2',
       'serverless-offline': '^14.4.0'
     }
   );
