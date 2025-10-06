@@ -1,3 +1,13 @@
+## 0.7.8 (2025-10-06)
+
+### 🩹 Fixes
+
+- fixing unit test sls-node ([4f534b1](https://github.com/rcanessa89/my-shared/commit/4f534b1))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.7.7 (2025-10-06)
 
 ### 🩹 Fixes
