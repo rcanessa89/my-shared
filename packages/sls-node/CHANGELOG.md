@@ -1,3 +1,13 @@
+## 0.7.3 (2025-10-06)
+
+### 🩹 Fixes
+
+- fixing sls-node targets ([915abbe](https://github.com/rcanessa89/my-shared/commit/915abbe))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.7.2 (2025-10-06)
 
 ### 🩹 Fixes
