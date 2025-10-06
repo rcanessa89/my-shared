@@ -1,3 +1,13 @@
+## 0.7.5 (2025-10-06)
+
+### 🩹 Fixes
+
+- fixing sls-node ([7516357](https://github.com/rcanessa89/my-shared/commit/7516357))
+
+### ❤️ Thank You
+
+- Rodolfo Canessa @rcanessa89
+
 ## 0.7.4 (2025-10-06)
 
 ### 🩹 Fixes
