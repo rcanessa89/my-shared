@@ -3,17 +3,12 @@ const baseConfig = require('../../eslint.config.cjs');
 
 module.exports = [
   {
-    files: ['./package.json'],
-    rules: {
-      '@typescript-eslint/no-unused-expressions': 'off'
-    }
+    ignores: ['**/package.json', '**/package-lock.json', '**/node_modules/**']
   },
   ...baseConfig,
   ...nx.configs['flat/react'],
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    // Override or add rules here
-    ignores: ['./package.json'],
     rules: {}
   }
 ];
