@@ -46,8 +46,7 @@ describe('app generator', () => {
     const packageJson = readJson(tree, 'package.json');
 
     expect(packageJson.devDependencies).toEqual({
-      serverless: '^4.20.2',
-      'serverless-offline': '^14.4.0'
+      serverless: '^4.20.2'
     });
   });
 
